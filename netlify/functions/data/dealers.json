@@ -1,0 +1,32 @@
+{
+  "BC": [
+    {
+      "name": "Dealer West 1",
+      "email": "dealer.west1@example.com"
+    }
+  ],
+  "AB": [
+    {
+      "name": "Dealer Prairies 1",
+      "email": "dealer.ab1@example.com"
+    }
+  ],
+  "ON": [
+    {
+      "name": "Dealer Ontario 1",
+      "email": "dealer.on1@example.com"
+    }
+  ],
+  "QC": [
+    {
+      "name": "Concessionnaire QC 1",
+      "email": "dealer.qc1@example.com"
+    }
+  ],
+  "ALL": [
+    {
+      "name": "Fallback Dealer",
+      "email": "dealer.all@example.com"
+    }
+  ]
+}
