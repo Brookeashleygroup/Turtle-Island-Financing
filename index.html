@@ -6,7 +6,7 @@
   <title>Turtle Island Financing — Indigenous-led Auto Financing in Canada</title>
   <meta name="description" content="Indigenous-owned lead service in Canada. Dealers trained in Indigenous protocol. Transparent, Canadian info only.">
   <meta property="og:title" content="Turtle Island Financing — Respectful Auto Financing">
-  <meta property="og:description" content="We connect you with trained partner dealerships. Transparent, honest, and culturally sensitive.">
+  <meta property="og:description" content="We connect you to trained partner dealerships. Transparent, honest, and culturally sensitive.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/hero-art.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +26,7 @@
         </div>
       </div>
       <nav class="top-nav">
-        <a class="btn link" href="/verify">Verify</a>
+        <a class="btn link" href="/verify.html">Verify</a>
         <a class="btn link" href="/dealers.html">For Dealers</a>
         <a class="btn ghost" href="#apply">Apply Now</a>
       </nav>
@@ -72,7 +72,7 @@
   <section class="dealer-network">
     <div class="container">
       <h3>A Dealer Network That Respects You</h3>
-      <ul class="checklist">
+    <ul class="checklist">
         <li><strong>Trained by us</strong> to be patient, respectful, and transparent.</li>
         <li><strong>Educated on Indigenous history and protocol</strong> to honour your perspective.</li>
         <li>No high-pressure sales or tax-exemption gimmicks.</li>
@@ -94,7 +94,7 @@
     </div>
   </section>
 
-  <!-- NEW: Dealer Certification section -->
+  <!-- Dealer Certification section -->
   <section class="dealer-cert">
     <div class="container">
       <h3>Dealer Certification — Training by Brooke Ashley Group</h3>
@@ -107,7 +107,7 @@
         <li>Respectful, patient communication — zero pressure</li>
         <li>Proper handling of tax exemption — savings stay yours</li>
         <li>Comfort with seasonal/self-employed income documentation</li>
-        <li>Public verification at <a href="/verify">turtleislandfinancing.ca/verify</a></li>
+        <li>Public verification at <a href="/verify.html">turtleislandfinancing.ca/verify</a></li>
       </ul>
       <p class="small muted">Note: This is Turtle Island’s program, delivered by Brooke Ashley Group. It is separate from CCAB’s CAB designation.</p>
       <div style="margin-top:12px">
@@ -187,7 +187,7 @@
     </div>
   </section>
 
-  <section class="roadmap">
+  <section id="roadmap" class="roadmap">
     <div class="container">
       <h3>Standard Approval Roadmap (Canada)</h3>
       <ol class="steps">
@@ -208,7 +208,6 @@
         <h3>Quick Pre-Approval</h3>
         <p class="muted">We’ll share your application with a trained partner dealership in Canada. They may contact you by phone, SMS, or email.</p>
 
-        <!-- Netlify Forms: correct honeypot + hidden form-name -->
         <form name="preapproval"
               method="POST"
               data-netlify="true"
@@ -216,7 +215,6 @@
               action="/thank-you.html"
               id="leadForm">
           <input type="hidden" name="form-name" value="preapproval">
-          <!-- Honeypot field (real input, visually hidden) -->
           <p style="position:absolute;left:-9999px;">
             <label>Don’t fill this out: <input name="bot-field"></label>
           </p>
@@ -264,7 +262,7 @@
       <aside class="trust">
         <h4>Trust &amp; Certification</h4>
         <div class="ccab-badge" role="group" aria-label="Certification badge">
-          <img src="assets/CIB-LogoH-Colour (1).png" alt="Certified Aboriginal Business (CAB) — Canadian Council for Aboriginal Business">
+          <img src="assets/ccab-cab-badge.png" alt="Certified Aboriginal Business (CAB) — Canadian Council for Aboriginal Business">
           <div class="ccab-text"><strong>Certified Aboriginal Business (CAB)</strong><br>Verified by the Canadian Council for Aboriginal Business (CCAB)</div>
         </div>
         <ul class="bullets">
@@ -282,7 +280,7 @@
       <p>© <span id="year"></span> Turtle Island Financing • An initiative of Brooke Ashley Group • <span class="muted">Certified Aboriginal Business (CAB) — CCAB</span></p>
       <nav>
         <a href="#apply">Apply</a>
-        <a href="/verify">Verify</a>
+        <a href="/verify.html">Verify</a>
         <a href="/dealers.html">For Dealers</a>
         <a href="/standards.html">Our Standards</a>
         <a href="#" onclick="window.alert('Email: hello@turtleislandfinancing.ca'); return false;">Contact</a>
