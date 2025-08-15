@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Verify Certification — Turtle Island Financing</title>
+  <meta name="description" content="Verify Indigenous sensitivity training certification for dealers/staff." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="/assets/favicon.png" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">🐢</div>
+        <div class="brand-text">
+          <h1>Verify Certification</h1>
+          <p class="tag">Turtle Island Financing (Brooke Ashley Group Inc. o/a)</p>
+        </div>
+      </div>
+      <nav class="top-nav">
+        <a class="btn link" href="/">Home</a>
+        <a class="btn link" href="/dealers.html">Dealer Program</a>
+        <a class="btn ghost" href="/#apply">Apply</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="role">
+    <div class="container">
+      <h3>Certified people & participating dealerships</h3>
+      <p class="muted">Search by dealership, city, or staff name. If you don’t see a result, submit a manual verification request below.</p>
+
+      <input id="q" type="search" placeholder="Search name, dealership, city, province…" class="input" style="width:100%;max-width:560px" />
+
+      <div id="dir" style="margin-top:16px"></div>
+    </div>
+  </section>
+
+  <section class="form-wrap">
+    <div class="container grid">
+      <div class="form-card">
+        <h3>Manual verification request</h3>
+        <form name="verify-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+          <input type="hidden" name="form-name" value="verify-request" />
+          <p style="position:absolute;left:-9999px;"><label>Don’t fill this out: <input name="bot-field" /></label></p>
+
+          <div class="row">
+            <label>Dealership*<input name="dealership" required /></label>
+            <label>City/Province*<input name="location" required /></label>
+          </div>
+          <div class="row">
+            <label>Staff Name (optional)<input name="staff" /></label>
+            <label>Certificate ID (if shown)<input name="cert_id" /></label>
+          </div>
+          <div class="row">
+            <label>Your Email*<input type="email" name="email" required /></label>
+            <label>Your Name*<input name="name" required /></label>
+          </div>
+          <button class="btn wide">Request Verification</button>
+        </form>
+      </div>
+      <aside class="trust">
+        <h4>How verification works</h4>
+        <ul class="bullets">
+          <li>Staff complete Brooke Ashley Group training (valid 5 years)</li>
+          <li>Dealers with active membership can display the badge</li>
+          <li>Directory is updated as certifications are issued</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container foot">
+      <p>© <span id="year"></span> Turtle Island Financing — a trade name of <strong>Brooke Ashley Group Inc.</strong></p>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/dealers.html">Dealer Program</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+  // Try to load a simple JSON directory at /assets/dealers.json
+  const elQ = document.getElementById('q');
+  const elDir = document.getElementById('dir');
+  let DATA = [];
+
+  function render(q = '') {
+    const term = q.trim().toLowerCase();
+    const list = !term ? DATA : DATA.filter(d => {
+      return [d.dealer,d.city,d.province,(d.staff||[]).join(' ')].join(' ').toLowerCase().includes(term);
+    });
+    if (!list.length) {
+      elDir.innerHTML = '<p class="muted">No results. Try another term or submit a manual request below.</p>';
+      return;
+    }
+    const rows = list.map(d => `
+      <div class="thankyou-card" style="margin-bottom:10px">
+        <strong>${d.dealer}</strong> — ${d.city}, ${d.province}<br/>
+        <span class="muted">Certified staff:</span> ${(d.staff||[]).join(', ') || '—'}
+        ${d.cert_valid_to ? `<br/><span class="muted">Valid to: ${d.cert_valid_to}</span>` : ''}
+      </div>`).join('');
+    elDir.innerHTML = rows;
+  }
+
+  async function load() {
+    try {
+      const resp = await fetch('/assets/dealers.json', {cache:'no-store'});
+      if (!resp.ok) throw new Error('no file');
+      DATA = await resp.json();
+      render('');
+    } catch (e) {
+      elDir.innerHTML = '<p class="muted">Directory coming soon. Use the manual verification form below.</p>';
+    }
+  }
+
+  elQ.addEventListener('input', e => render(e.target.value));
+  load();
+  </script>
+  <script src="/script.js"></script>
+</body>
+</html>
