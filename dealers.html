@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dealer Program — Turtle Island Financing</title>
+  <meta name="description" content="Join Turtle Island Financing's Indigenous sensitivity-certified dealer network." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="/assets/favicon.png" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">🐢</div>
+        <div class="brand-text">
+          <h1>Turtle Island Financing</h1>
+          <p class="tag">Brooke Ashley Group Inc. (o/a)</p>
+        </div>
+      </div>
+      <nav class="top-nav">
+        <a class="btn link" href="/">Home</a>
+        <a class="btn link" href="/verify.html">Verify</a>
+        <a class="btn ghost" href="/#apply">Client Apply</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h2>Join our certified, respectful dealer network</h2>
+        <p>Access prepared Indigenous clients, demonstrate cultural competency, and build long-term trust.</p>
+        <ul class="pill-list">
+          <li>Leads prepared with clear expectations</li>
+          <li>Indigenous Sensitivity Training by Brooke Ashley Group</li>
+          <li>5-year portable certification for staff</li>
+          <li>Transparent standards & public verification</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="role">
+    <div class="container">
+      <h3>Program at a glance</h3>
+      <div class="cards">
+        <div class="card"><h4>Training & Certification</h4><p>Staff complete Indigenous cultural competency training (valid 5 years, portable across participating stores).</p></div>
+        <div class="card"><h4>Lead Access</h4><p>Receive qualified submissions with documents roadmap; we set expectations on credit checks and timelines.</p></div>
+        <div class="card"><h4>Standards</h4><p>Zero-pressure sales, proper tax-exemption handling, and transparent pricing. <a href="/standards.html">Read standards</a>.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="form-wrap">
+    <div class="container grid">
+      <div class="form-card">
+        <h3>Dealer Interest Form</h3>
+        <p class="muted">Tell us about your store. We’ll follow up with training dates, pricing, and onboarding.</p>
+
+        <form name="dealer-interest" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+          <input type="hidden" name="form-name" value="dealer-interest" />
+          <p style="position:absolute;left:-9999px;"><label>Don’t fill this out: <input name="bot-field" /></label></p>
+
+          <div class="row">
+            <label>Dealership Name*<input type="text" name="dealership" required /></label>
+            <label>Province/Territory*<select name="province" required>
+              <option value="">Select…</option><option>BC</option><option>AB</option><option>SK</option><option>MB</option>
+              <option>ON</option><option>QC</option><option>NB</option><option>NS</option><option>PE</option>
+              <option>NL</option><option>YT</option><option>NT</option><option>NU</option>
+            </select></label>
+          </div>
+
+          <div class="row">
+            <label>Contact Name*<input type="text" name="contact" required /></label>
+            <label>Title<input type="text" name="title" /></label>
+          </div>
+
+          <div class="row">
+            <label>Email*<input type="email" name="email" required /></label>
+            <label>Phone*<input type="tel" name="phone" required /></label>
+          </div>
+
+          <div class="row">
+            <label># Sales/Finance staff to certify<input type="number" name="staff_count" min="1" /></label>
+            <label>Brand(s)<input type="text" name="brands" /></label>
+          </div>
+
+          <label>Notes (optional)<textarea name="notes" rows="3" placeholder="Timing, locations, questions…"></textarea></label>
+
+          <label class="consent"><input type="checkbox" name="agree" required />
+            I agree to Turtle Island Financing standards and understand training is delivered by Brooke Ashley Group Inc.
+          </label>
+
+          <button type="submit" class="btn wide">Request Onboarding</button>
+        </form>
+      </div>
+
+      <aside class="trust">
+        <h4>Proof you can hang on the wall</h4>
+        <ul class="bullets">
+          <li>Certificate with staff name & expiry (5 years)</li>
+          <li>Public verification at <a href="/verify.html">/verify</a></li>
+          <li>Marketing badge for website & showroom</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container foot">
+      <p>© <span id="year"></span> Turtle Island Financing — a trade name of <strong>Brooke Ashley Group Inc.</strong></p>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/standards.html">Our Standards</a>
+        <a href="/verify.html">Verify</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="/script.js"></script>
+</body>
+</html>
