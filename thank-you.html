@@ -1,11 +1,75 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Thanks — Turtle Island Financing</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css"></head>
-<body class="thankyou">
-  <main class="container"><div class="thanks-card">
-    <h1>Thank you!</h1><p>We received your request. A trained partner dealership will reach out soon.</p>
-    <a class="btn" href="/">Back to Home</a></div></main>
-</body></html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thank You — Turtle Island Financing</title>
+  <meta name="description" content="Thanks for contacting Turtle Island Financing. We received your submission.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/favicon.png">
+  <style>
+    .thankyou-hero { background: #F3FCFA; padding: 64px 0; }
+    .thankyou-card { background: #fff; border: 1px solid #E2F3EF; border-radius: 16px; padding: 24px; box-shadow: 0 6px 24px rgba(0,0,0,.04); }
+    .next-steps { margin-top: 16px; }
+    .next-steps li { margin: 6px 0; }
+    .links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+    .muted { color: #466; opacity: .9; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">🐢</div>
+        <div class="brand-text">
+          <h1>Turtle Island Financing</h1>
+          <p class="tag">Indigenous-led • Canada</p>
+        </div>
+      </div>
+      <nav class="top-nav">
+        <a class="btn link" href="/verify">Verify</a>
+        <a class="btn link" href="/dealers.html">For Dealers</a>
+        <a class="btn ghost" href="/#apply">Apply</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="thankyou-hero">
+    <div class="container">
+      <div class="thankyou-card">
+        <h2>Thank you — we received your submission.</h2>
+        <p class="muted">We’ll review your details and connect you with a respectful, trained partner dealership. They may contact you by phone, SMS, or email.</p>
+
+        <h3 class="next-steps-title">What happens next</h3>
+        <ul class="next-steps">
+          <li>We match you with the best-suited partner dealership based on location and situation.</li>
+          <li>The dealership may request a credit report later with your consent.</li>
+          <li>There is <strong>no cost to you</strong>; our referral fee is paid by the partner dealership.</li>
+          <li>If you plan to claim tax exemption, have your status card and delivery details ready.</li>
+        </ul>
+
+        <div class="links">
+          <a class="btn" href="/">Back to Home</a>
+          <a class="btn link" href="/#roadmap">See the Approval Roadmap</a>
+          <a class="btn link" href="/standards.html">Our Standards</a>
+          <a class="btn link" href="/verify">Verify Dealer Certification</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container foot">
+      <p>© <span id="year"></span> Turtle Island Financing • An initiative of Brooke Ashley Group</p>
+      <nav>
+        <a href="/#apply">Apply</a>
+        <a href="/verify">Verify</a>
+        <a href="/dealers.html">For Dealers</a>
+        <a href="/standards.html">Our Standards</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
