@@ -3,74 +3,69 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TRC Call to Action 92 — Corporate Canada Training (Auto Sales Edition)</title>
-  <meta name="description" content="Self‑paced virtual course with exam and auto certificate. Auto sales industry edition. Delivered by Brooke Ashley Group." />
+  <title>TRC 92 — Auto Sales Training (Video-Gated, TRC First)</title>
+  <meta name="description" content="Self-paced course: TRC 92 → Royal Proclamation → Residential Schools → Sixties Scoop → UNDRIP → Section 87 (tax) → Indian Trust Fund. Video-gated modules, quizzes, 20-question final exam, certificate." />
   <style>
-    :root{
-      --turquoise:#1fb7b0; --turquoise-dark:#0f8e89; --sand:#e9e1d3; --clay:#b87952; --navy:#0d2b3a; --ink:#102129; --cloud:#f7f9fa;
-    }
+    :root{--turquoise:#1fb7b0; --turquoise-dark:#0f8e89; --navy:#0d2b3a; --ink:#102129; --cloud:#f7f9fa; --border:#e5e9ee;}
     *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;line-height:1.45;color:var(--ink);background:var(--cloud)}
-    header{background:linear-gradient(135deg,var(--turquoise),var(--turquoise-dark));color:#fff;padding:28px 20px}
-    header h1{margin:0;font-size:clamp(24px,4vw,34px)}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;line-height:1.5;color:var(--ink);background:var(--cloud)}
+    header{background:linear-gradient(135deg,var(--navy),var(--turquoise));color:#fff;padding:28px 20px}
+    header h1{margin:0;font-size:clamp(24px,4vw,36px)}
     header p{margin:6px 0 0;opacity:.9}
-    main{max-width:1024px;margin:24px auto;padding:0 16px 80px}
-    .card{background:#fff;border:1px solid #e5e9ee;border-radius:16px;padding:20px;box-shadow:0 6px 22px rgba(16,33,41,.04)}
-    .grid{display:grid;gap:16px}
-    .two{grid-template-columns:1fr}
-    @media (min-width:900px){.two{grid-template-columns:1.2fr .8fr}}
-    .pill{display:inline-flex;align-items:center;border-radius:999px;padding:6px 12px;background:var(--sand);color:#533;font-weight:600;font-size:12px;letter-spacing:.3px;text-transform:uppercase}
-    .btn{appearance:none;border:0;border-radius:12px;padding:12px 16px;font-weight:700;background:var(--turquoise);color:#fff;cursor:pointer;transition:.2s transform,.2s box-shadow}
+    main{max-width:1100px;margin:24px auto;padding:0 16px 120px}
+    .card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:0 6px 22px rgba(16,33,41,.05)}
+    .bead{height:6px;background:repeating-linear-gradient(90deg,transparent,transparent 10px,#fff 10px,#fff 12px,transparent 12px,transparent 22px,#fff 22px,#fff 24px),linear-gradient(90deg,var(--turquoise),var(--turquoise-dark));border-radius:6px;margin:12px 0}
+    .pill{display:inline-flex;align-items:center;border-radius:999px;padding:6px 12px;background:#e9f7f6;color:#0f8e89;font-weight:700;font-size:12px;letter-spacing:.3px;text-transform:uppercase}
+    .btn{appearance:none;border:0;border-radius:12px;padding:12px 16px;font-weight:800;background:var(--turquoise);color:#fff;cursor:pointer;transition:.2s transform,.2s box-shadow}
     .btn[disabled]{opacity:.5;cursor:not-allowed}
     .btn:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(31,183,176,.25)}
     .btn.alt{background:#fff;color:var(--turquoise);border:2px solid var(--turquoise)}
+    h2{margin:.4rem 0 1rem}
+    h3{margin:.2rem 0 .8rem}
+    ul{margin:0 0 10px 18px}
+    .muted{opacity:.75}
     .progress{height:10px;background:#e8eef2;border-radius:999px;overflow:hidden}
     .progress>span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--turquoise),var(--turquoise-dark))}
-    h2{margin:.2rem 0 1rem}
-    details{border:1px solid #e5e9ee;border-radius:12px;padding:14px 16px}
-    details summary{cursor:pointer;font-weight:700}
-    .module{border-left:6px solid var(--turquoise);padding-left:14px}
-    .kq{background:#f7fbfb;border:1px solid #ddf2f0;border-radius:12px;padding:14px;margin:10px 0}
-    .kq h4{margin:.2rem 0 .6rem}
-    .exam{counter-reset:q}
-    .q{border:1px solid #e7edf1;border-radius:12px;padding:14px;margin:12px 0}
-    .q label{display:block;margin:8px 0}
-    .q .qnum::before{counter-increment:q;content:"Q" counter(q) ". ";font-weight:800}
-    .muted{opacity:.75}
+    .module{border-left:6px solid var(--turquoise);padding-left:14px;margin-top:16px}
+    .grid{display:grid;gap:16px}
+    .two{grid-template-columns:1fr}
+    @media (min-width:900px){.two{grid-template-columns:1.2fr .8fr}}
+    .quiz{border:1px solid var(--border);border-radius:12px;padding:14px;margin-top:12px;background:#fbfdfd}
+    .q{border:1px dashed #dbe7ec;border-radius:10px;padding:10px;margin:10px 0}
+    .q label{display:block;margin:6px 0}
+    .explain{background:#f7fbfb;border:1px solid #ddf2f0;border-radius:10px;padding:10px;margin-top:6px}
+    .score{font-weight:800}
     .notice{background:#fff6d8;border:1px solid #ffe8a3;border-radius:12px;padding:12px}
-    footer{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e5e9ee;padding:10px 16px;display:flex;gap:10px;justify-content:space-between;align-items:center}
-    .bead{height:6px;background:repeating-linear-gradient(90deg,transparent,transparent 10px,#fff 10px,#fff 12px,transparent 12px,transparent 22px,#fff 22px,#fff 24px),linear-gradient(90deg,var(--turquoise),var(--turquoise-dark));border-radius:6px;margin:12px 0}
-    .cert-preview{border:1px dashed #cfd8de;border-radius:12px;padding:12px;background:#fff}
     .hidden{display:none}
+    footer{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--border);padding:10px 16px;display:flex;gap:10px;justify-content:space-between;align-items:center}
+    .cert-preview{border:1px dashed var(--border);border-radius:12px;padding:12px}
+    .video-wrap{position:relative;width:100%;padding-top:56.25%;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#000;margin:8px 0}
+    .video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%}
   </style>
 </head>
 <body>
   <header>
     <div class="bead"></div>
-    <h1>TRC Call to Action 92 — Corporate Canada Training <span class="muted">(Auto Sales Edition)</span></h1>
-    <p>Self‑paced course with final exam and instant certificate • Delivered by Brooke Ashley Group</p>
+    <h1>TRC 92 — Auto Sales Training (Video-Gated)</h1>
+    <p>7 modules with videos • 5-question quizzes • 20-question final exam • certificate</p>
     <div class="bead"></div>
   </header>
-  
+
   <main>
-    <section class="card grid two" id="intro">
+    <section class="card grid two">
       <div>
         <span class="pill">Start here</span>
         <h2>Welcome</h2>
-        <p>This 80‑minute course equips Canadian auto dealerships and finance teams to meet <strong>TRC Call to Action 92</strong> from an Indigenous perspective. Complete all modules, then pass the 20‑question exam with a score of <strong>70%+</strong> to receive your <strong>Auto Sales Certificate of Completion</strong>.</p>
-        <ul>
-          <li>Modules: TRC 92, history & treaties, unceded territories, residential schools, Section 87 tax, myths/stereotypes, practical actions for dealerships.</li>
-          <li>Industry focus: sales floor, F&amp;I office, documentation, respectful customer engagement.</li>
-        </ul>
-        <div class="notice">Tip: The exam unlocks after you mark each module as complete.</div>
+        <p>Course order: <strong>TRC 92</strong> → <strong>Royal Proclamation & Treaties</strong> → <strong>Residential Schools</strong> → <strong>Sixties Scoop</strong> → <strong>UNDRIP</strong> → <strong>Section 87 (tax)</strong> → <strong>Indian Trust Fund</strong>.</p>
+        <p>Watch each module’s video to unlock its quiz. Pass each quiz with <strong>≥70%</strong> to unlock the final exam.</p>
       </div>
       <div>
         <div class="card" style="background:linear-gradient(135deg,#0d2b3a,#1fb7b0);color:#fff">
-          <h3 style="margin-top:0">Learner Details</h3>
-          <p class="muted">These appear on your certificate and submission.</p>
-          <label>Full name<br><input id="fullName" required placeholder="Jane Doe" style="width:100%;padding:10px;border-radius:10px;border:1px solid #cfd8de"></label>
-          <label>Email (optional, for receipt)<br><input id="email" type="email" placeholder="jane@example.com" style="width:100%;padding:10px;border-radius:10px;border:1px solid #cfd8de"></label>
-          <button class="btn alt" id="saveProfile" style="margin-top:10px">Save</button>
+          <h3 style="margin-top:0">Learner details</h3>
+          <p class="muted">Shown on your certificate.</p>
+          <label>Full name<br><input id="fullName" placeholder="Jane Doe" style="width:100%;padding:10px;border-radius:10px;border:1px solid #cfd8de"></label>
+          <label>Email (optional)<br><input id="email" type="email" placeholder="jane@example.com" style="width:100%;padding:10px;border-radius:10px;border:1px solid #cfd8de"></label>
+          <button class="btn alt" id="saveProfile" style="margin-top:8px">Save</button>
           <div id="saveMsg" class="muted" style="margin-top:6px"></div>
         </div>
       </div>
@@ -78,131 +73,30 @@
 
     <section class="card" style="margin-top:16px">
       <div class="progress" aria-label="progress"><span id="progressBar"></span></div>
-      <div class="muted" id="progressText">0/7 modules completed</div>
+      <div class="muted" id="progressText">0/7 modules passed</div>
     </section>
 
-    <!-- MODULES -->
-    <section class="card module" id="m1">
-      <h2>Module 1 — TRC 92 in Plain Language (≈10 min)</h2>
-      <p>TRC 92 asks corporate Canada to adopt UNDRIP as a framework, consult and build respectful relationships with Indigenous peoples, ensure equitable access to jobs, training and education, and provide staff education on Indigenous history, rights, and cultures.</p>
-      <ul>
-        <li>Why this matters in auto sales: trust, compliance, reputation, and long‑term customer relationships.</li>
-        <li>Dealership examples: fair processes, respectful language, informed finance/insurance (F&amp;I) practices.</li>
-      </ul>
-      <details><summary>Did you know?</summary><p>The TRC published 94 Calls to Action in 2015 after collecting thousands of Survivor testimonies.</p></details>
-      <div class="kq">
-        <h4>Quick check</h4>
-        <label><input type="radio" name="m1q1"> TRC 92 only applies to governments.</label>
-        <label><input type="radio" name="m1q1" data-correct> TRC 92 addresses corporate responsibilities.</label>
-      </div>
-      <button class="btn" data-complete="1">Mark Module 1 Complete</button>
-    </section>
+    <div id="modules"></div>
 
-    <section class="card module" id="m2">
-      <h2>Module 2 — Historical Context: Royal Proclamation, Treaties, Unceded Territories (≈20 min)</h2>
-      <p><strong>Royal Proclamation (1763):</strong> recognized Indigenous land rights and required treaties for land acquisition. <strong>Treaties:</strong> Numbered (1871–1921) and modern (since 1970s) remain legally binding. <strong>Unceded territories:</strong> lands never surrendered by treaty; many operations occur on unceded land today.</p>
-      <ul>
-        <li>Auto sales lens: siting dealerships, advertising, land acknowledgments that lead to action.</li>
-        <li>Respect for local Nations, languages, and protocols.</li>
-      </ul>
-      <div class="kq">
-        <h4>Quick check</h4>
-        <label><input type="radio" name="m2q1" data-correct> The Royal Proclamation recognized Indigenous land rights.</label>
-        <label><input type="radio" name="m2q1"> Treaties are symbolic and not legally binding.</label>
-      </div>
-      <button class="btn" data-complete="2">Mark Module 2 Complete</button>
-    </section>
-
-    <section class="card module" id="m3">
-      <h2>Module 3 — Residential Schools &amp; Sixties Scoop (≈15 min)</h2>
-      <p>Residential schools (1831–1996) aimed at forced assimilation, causing loss of language, culture, and family connection. The Sixties Scoop further removed Indigenous children from families. These histories create intergenerational impacts seen in workplaces and customer interactions today.</p>
-      <ul>
-        <li>Auto sales lens: trauma‑informed customer service; avoiding stereotypes and microaggressions.</li>
-      </ul>
-      <div class="kq">
-        <h4>Quick check</h4>
-        <label><input type="radio" name="m3q1" data-correct> Residential schools operated into the 1990s.</label>
-        <label><input type="radio" name="m3q1"> They ended before 1900.</label>
-      </div>
-      <button class="btn" data-complete="3">Mark Module 3 Complete</button>
-    </section>
-
-    <section class="card module" id="m4">
-      <h2>Module 4 — Tax Exemption (Section 87) &amp; Sales Taxes (≈15 min)</h2>
-      <p><strong>Section 87 of the Indian Act</strong> exempts the personal property of a Status Indian situated on a reserve from taxation. Sales tax application (GST/HST/PST) depends on specific conditions (e.g., nature of goods/services, point of delivery). Staff must follow current CRA/provincial guidance and verify documentation respectfully.</p>
-      <ul>
-        <li>Auto sales lens: how to apply exemptions fairly in vehicle sales, trade‑ins, parts/service, and financing paperwork.</li>
-        <li>Do: verify respectfully, document clearly. Don’t: deny rights or upcharge to offset exemptions.</li>
-      </ul>
-      <div class="kq">
-        <h4>Quick check</h4>
-        <label><input type="radio" name="m4q1"> Section 87 grants free housing.</label>
-        <label><input type="radio" name="m4q1" data-correct> Section 87 concerns tax on certain property/income related to reserves.</label>
-      </div>
-      <button class="btn" data-complete="4">Mark Module 4 Complete</button>
-    </section>
-
-    <section class="card module" id="m5">
-      <h2>Module 5 — Myths &amp; Stereotypes (≈10 min)</h2>
-      <p>Common myths (e.g., “all taxes are exempt”, “all communities are the same”) are false and harmful. Replace assumptions with facts; engage each customer as an individual with respect for Nation‑specific contexts.</p>
-      <ul>
-        <li>Auto sales lens: respectful greetings, patient explanations, and equitable financing interactions.</li>
-      </ul>
-      <div class="kq">
-        <h4>Quick check</h4>
-        <label><input type="radio" name="m5q1" data-correct> Stereotypes erode trust and inclusion.</label>
-        <label><input type="radio" name="m5q1"> Stereotypes are harmless shortcuts.</label>
-      </div>
-      <button class="btn" data-complete="5">Mark Module 5 Complete</button>
-    </section>
-
-    <section class="card module" id="m6">
-      <h2>Module 6 — Practical Actions for Dealerships (≈10 min)</h2>
-      <ul>
-        <li>Move beyond land acknowledgments: set reconciliation KPIs, supplier diversity targets, and staff training plans.</li>
-        <li>Partner with Indigenous‑owned suppliers; build long‑term relationships.</li>
-        <li>Create culturally safe hiring, onboarding, and retention practices.</li>
-        <li>Publish progress annually.</li>
-      </ul>
-      <div class="kq">
-        <h4>Quick check</h4>
-        <label><input type="radio" name="m6q1"> A one‑time donation completes reconciliation.</label>
-        <label><input type="radio" name="m6q1" data-correct> Sustainable policy, procurement, and hiring changes are required.</label>
-      </div>
-      <button class="btn" data-complete="6">Mark Module 6 Complete</button>
-    </section>
-
-    <section class="card module" id="m7">
-      <h2>Module 7 — Review &amp; Exam Instructions (≈5 min)</h2>
-      <p>Recap: TRC 92 responsibilities, history and treaties, unceded territories, residential schools, Section 87 and sales taxes, myths/stereotypes, and dealership action steps. When ready, start the exam below. You must score <strong>70%+</strong> to pass. One retake is allowed.</p>
-      <button class="btn" data-complete="7">Mark Module 7 Complete</button>
-    </section>
-
-    <!-- EXAM SECTION -->
-    <section class="card" id="examSection">
+    <section class="card" id="examSection" style="margin-top:16px">
       <h2>Final Exam — 20 Questions</h2>
-      <p class="muted">The exam unlocks after all 7 modules are marked complete.</p>
-      <div id="examLocked" class="notice">Complete all modules to unlock the exam.</div>
+      <p class="muted">Unlocks after you pass all modules (≥70% on each quiz).</p>
+      <div id="examLocked" class="notice">Finish the module quizzes to unlock the final exam.</div>
       <form id="examForm" class="hidden">
-        <div id="examContainer" class="exam"></div>
-        <button type="submit" class="btn">Submit Exam</button>
+        <div id="examContainer"></div>
+        <button class="btn" type="submit">Submit Exam</button>
       </form>
       <div id="examResult" class="hidden"></div>
-
       <div id="certificateBlock" class="hidden">
         <h3>Your Certificate</h3>
         <div class="cert-preview">
           <p><strong>Auto Sales Certificate of Completion</strong></p>
-          <ul class="muted">
-            <li>Includes: Name, Date, Course Title, Score, Unique ID</li>
-            <li>Design: road horizon background, beadwork border, steering‑wheel watermark</li>
-          </ul>
           <button class="btn" id="downloadCert">Download Certificate (PDF)</button>
         </div>
       </div>
     </section>
 
-    <!-- Hidden Netlify form for submissions -->
+    <!-- Netlify form (silent submission for records) -->
     <form name="exam-submissions" netlify netlify-honeypot="bot-field" hidden>
       <input name="form-name" value="exam-submissions" />
       <input name="fullName" />
@@ -216,238 +110,453 @@
   </main>
 
   <footer>
-    <div>
-      <strong>Progress:</strong> <span id="footerProgress">0/7</span>
-    </div>
-    <div>
-      <button class="btn alt" id="resetBtn">Reset Course</button>
-    </div>
+    <div><strong>Progress:</strong> <span id="footerProgress">0/7</span></div>
+    <div><button class="btn alt" id="resetBtn">Reset Course</button></div>
   </footer>
 
-  <!-- jsPDF for certificate generation -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" referrerpolicy="no-referrer"></script>
+  <!-- YouTube IFrame API (privacy enhanced host used in JS) -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <!-- jsPDF for certificate -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
   <script>
-    // ---------- State & helpers ----------
-    const totalModules = 7;
-    const profile = JSON.parse(localStorage.getItem('trc92_profile')||'{}');
-    const completed = new Set(JSON.parse(localStorage.getItem('trc92_completed')||'[]'));
-    const examTaken = JSON.parse(localStorage.getItem('trc92_exam')||'null');
+    const PASS = 70;
 
-    const $ = sel => document.querySelector(sel);
-    const $$ = sel => Array.from(document.querySelectorAll(sel));
+    // ---------- storage helpers ----------
+    const storage = {
+      getProfile(){ return JSON.parse(localStorage.getItem('trc92_profile')||'{}') },
+      setProfile(p){ localStorage.setItem('trc92_profile', JSON.stringify(p)) },
+      getModuleScores(){ return JSON.parse(localStorage.getItem('trc92_mod_scores')||'{}') },
+      setModuleScores(s){ localStorage.setItem('trc92_mod_scores', JSON.stringify(s)) },
+      setExam(e){ localStorage.setItem('trc92_exam', JSON.stringify(e)) },
+      getExam(){ return JSON.parse(localStorage.getItem('trc92_exam')||'null') },
+      getVideo(){ return JSON.parse(localStorage.getItem('trc92_video')||'{}') },
+      setVideo(v){ localStorage.setItem('trc92_video', JSON.stringify(v)) },
+      reset(){ localStorage.removeItem('trc92_profile'); localStorage.removeItem('trc92_mod_scores'); localStorage.removeItem('trc92_exam'); localStorage.removeItem('trc92_video'); }
+    };
+    const $ = s => document.querySelector(s);
+    const $$ = s => Array.from(document.querySelectorAll(s));
+    const uuid = ()=>'xxxxxx-xxxx-4xxx-yxxx-xxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0,v=c=='x'?r:(r&0x3|0x8);return v.toString(16)});
+    const shuffle = a => a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(v=>v[1]);
 
-    function saveProfile(){
-      const name = $('#fullName').value.trim();
-      const email = $('#email').value.trim();
-      localStorage.setItem('trc92_profile', JSON.stringify({name,email}));
-      $('#saveMsg').textContent = name? `Saved for ${name}`: 'Saved';
-    }
+    // ---------- modules (TRC first) ----------
+    const modules = [
+      // 1) TRC 92 for Business (video: pKCaXNHctho)
+      { id:'m1', videoId:'pKCaXNHctho', title:'Module 1 — TRC 92 (Corporate Canada & Dealership Actions)',
+        lesson:`<p><strong>TRC 92</strong> calls corporate Canada to adopt <em>UNDRIP</em>, build respectful relationships through meaningful, early consultation, ensure equitable access to jobs/training/education, and provide staff education on Indigenous history and rights. For dealerships: make reconciliation measurable—procurement, hiring, onboarding, and public reporting—not just symbolism.</p>`,
+        quiz:[
+          { q:"Under TRC 92, what should businesses adopt as a guiding framework?",
+            a:["Municipal bylaws","UNDRIP (United Nations Declaration on the Rights of Indigenous Peoples)","Only federal tax policy","ISO quality standards"],
+            c:1, e:"TRC 92 calls on corporate Canada to use UNDRIP to guide policies and decisions."
+          },
+          { q:"Which practice best reflects meaningful engagement with Indigenous Nations?",
+            a:["Notifying communities after decisions are made","Early, informed consultation that can shape outcomes","One-time donations only","Email surveys with no follow-up"],
+            c:1, e:"Engagement must be early, informed, and capable of changing plans."
+          },
+          { q:"A dealership KPI that supports economic reconciliation is:",
+            a:["Number of posters on the wall","% of staff completing Indigenous-led training and progress in Indigenous procurement","Total ad spend","Number of test drives"],
+            c:1, e:"Track training completion and Indigenous procurement as measurable outcomes."
+          },
+          { q:"How should Indigenous procurement be approached?",
+            a:["Only when it’s cheaper","Invite, include, and partner with Indigenous-owned suppliers as a sustained practice","Avoid RFPs to move faster","Use informal deals only"],
+            c:1, e:"Make supplier inclusion systematic and long-term, not ad hoc."
+          },
+          { q:"What does TRC 92 expect regarding the workplace?",
+            a:["No change to hiring or training","Equitable access to jobs, training, and education in culturally safe environments","Executive-only training","Volunteer-only initiatives"],
+            c:1, e:"Workforce equity and ongoing education are explicit expectations."
+          }
+        ]
+      },
 
-    function updateProgress(){
-      const count = completed.size;
-      $('#progressBar').style.width = ((count/totalModules)*100)+'%';
-      $('#progressText').textContent = `${count}/${totalModules} modules completed`;
-      $('#footerProgress').textContent = `${count}/${totalModules}`;
-      const unlocked = count===totalModules;
-      $('#examLocked').classList.toggle('hidden', unlocked);
-      $('#examForm').classList.toggle('hidden', !unlocked);
-    }
+      // 2) Royal Proclamation & Treaties (video: HHmrN_R4diE)
+      { id:'m2', videoId:'HHmrN_R4diE', title:'Module 2 — Royal Proclamation, Treaties & Unceded Territories',
+        lesson:`<p>The <strong>Royal Proclamation of 1763</strong> recognized Indigenous land rights and set Crown–First Nations protocols for land cession. Treaties (historic and modern) are legally binding; <strong>unceded territories</strong> are lands never surrendered by treaty. Tie land acknowledgments to action—partnerships, hiring, procurement, and reporting.</p>`,
+        quiz:[
+          { q:"Who issued the Royal Proclamation and in what year?",
+            a:["King George III in 1763","Queen Victoria in 1867","King George II in 1754","King William IV in 1831"],
+            c:0, e:"King George III issued it on October 7, 1763."
+          },
+          { q:"What did the Proclamation require for land to be validly obtained from First Nations?",
+            a:["Private purchases by settlers","Only provincial approval","Purchase by the Crown following formal protocols","Municipal council approval"],
+            c:2, e:"It recognized Indigenous title and required Crown purchases via formal processes."
+          },
+          { q:"What area did the Proclamation set aside to curb unauthorized settlement?",
+            a:["Urban reserves only","Indian Territories (west of settled colonies)","Coastal fishing zones","Hudson Bay posts only"],
+            c:1, e:"It defined large areas as Indian Territories, restricting unsanctioned settlement."
+          },
+          { q:"Why is the Proclamation foundational to treaty-making in Canada?",
+            a:["It abolished all earlier agreements","It created modern provinces","It set Crown–First Nations protocol for land cession and is referenced in the Constitution","It replaced oral history with written records"],
+            c:2, e:"It established treaty protocols and is referenced in constitutional protections."
+          },
+          { q:"What principle about land does the Proclamation affirm?",
+            a:["Aboriginal title began in 1867","Aboriginal title exists until ceded by treaty","Only Crown land exists in Canada","Private settlers may acquire title directly"],
+            c:1, e:"Title pre-exists and continues until formally ceded."
+          }
+        ]
+      },
 
-    function markComplete(idx){
-      completed.add(String(idx));
-      localStorage.setItem('trc92_completed', JSON.stringify(Array.from(completed)));
-      updateProgress();
-      window.scrollTo({top:0,behavior:'smooth'});
-    }
+      // 3) Residential Schools (video: j2Lv21Ktz84 — Sinclair)
+      { id:'m3', videoId:'j2Lv21Ktz84', title:'Module 3 — Residential Schools (Truth & Reconciliation Foundations)',
+        lesson:`<p>Residential schools caused profound harm—loss of language, culture, and family connection—with impacts across generations. Senator Murray Sinclair stresses that <em>reconciliation is inevitable</em>; the question is what kind of relationship we choose. Start by reading the TRC Summary & Calls, pick one, and act.</p>`,
+        quiz:[
+          { q:"What core role did the TRC serve, according to Senator Murray Sinclair?",
+            a:["A court to punish individuals","A forum for Survivors and school staff to address what happened","A fundraising body","A museum project"],
+            c:1, e:"The TRC created a forum to tell the truth and address what happened."
+          },
+          { q:"How does Sinclair describe reconciliation?",
+            a:["Optional if convenient","Inevitable; the question is what kind of relationship we choose","Only a government responsibility","Finished once the report was released"],
+            c:1, e:"We all share relationships here; we must choose how to live them."
+          },
+          { q:"Why were the Calls to Action written the way they were?",
+            a:["To rewrite the Constitution","To give people practical tools to act, even if governments stalled","Only to guide church operations","To replace all Canadian laws immediately"],
+            c:1, e:"They were drafted as a plan and toolkit for action."
+          },
+          { q:"What does “cultural genocide” mean here?",
+            a:["A metaphor with no meaning","Genocide focused on destroying culture rather than physically killing","A term for budget cuts","Only about language classes"],
+            c:1, e:"Schools aimed to kill the culture in children."
+          },
+          { q:"What first step does Sinclair recommend?",
+            a:["Wait for new laws","Read the TRC Summary and Calls, pick one, and act","Post on social media only","Avoid getting involved"],
+            c:1, e:"Read, choose an action you can influence, then do it."
+          }
+        ]
+      },
 
-    // ---------- Exam bank (20 MCQs) ----------
-    const bank = [
-      {q:'What year did the TRC release its 94 Calls to Action?', a:['2008','2015','1996','2021'], c:1},
-      {q:'TRC Call to Action 92 is directed toward:', a:['Indigenous governments','Corporate Canada','Provincial legislatures','International NGOs'], c:1},
-      {q:'The Royal Proclamation of 1763 recognized:', a:['Canadian independence','Indigenous land rights','Free trade agreements','Provincial sovereignty'], c:1},
-      {q:'Unceded territory means:', a:['Land given to settlers','Land never surrendered by treaty','Land bought from First Nations','Land taken in war'], c:1},
-      {q:'Residential schools in Canada operated from:', a:['1831–1996','1901–1960','1800–1950','1867–1985'], c:0},
-      {q:'The Sixties Scoop involved:', a:['Closing residential schools','Removing Indigenous children from families','Relocating reserves','Creating new treaties'], c:1},
-      {q:'Section 87 of the Indian Act provides:', a:['Free healthcare','Tax exemption for certain property/income','Free housing','Automatic land ownership'], c:1},
-      {q:'GST/HST/PST exemptions apply when:', a:['Anyone buys on reserve','A Status Indian purchases under specific conditions','All online purchases','Cash purchases only'], c:1},
-      {q:'Indigenous Trust Funds are:', a:['Private charity funds','Government‑held funds from historic agreements','Modern business investments','Pension plans'], c:1},
-      {q:'Which of the following is a harmful myth?', a:['All Indigenous peoples pay taxes','All Indigenous peoples get free housing','Indigenous nations are diverse','Indigenous peoples have unique languages'], c:1},
-      {q:'Approximately how many First Nations are in Canada?', a:['~100','600+','~200','1000+'], c:1},
-      {q:'Effective land acknowledgments should:', a:['Be memorized only','Lead to policy and action','Be for special events only','Be avoided'], c:1},
-      {q:'Corporate reconciliation means:', a:['Interns only','Respectful long‑term partnerships','One‑time donation','Ignore procurement'], c:1},
-      {q:'Modern treaties have been negotiated since:', a:['1970s','1800s','Confederation','1990'], c:0},
-      {q:'Which law governs most tax exemptions for First Nations?', a:['CRA Act','Indian Act','Constitution Act','Treaty of Paris'], c:1},
-      {q:'Cultural safety in hiring means:', a:['Only an annual cultural day','A workplace where Indigenous staff feel respected','Avoid culture completely','Unpaid cultural leave only'], c:1},
-      {q:'Why are stereotypes harmful in business?', a:['Sometimes true','Undermine trust and respect','Increase productivity','Save training costs'], c:1},
-      {q:'TRC 92 asks companies to adopt:', a:['UNDRIP','Indian Act','CBCA','Charter only'], c:0},
-      {q:'Primary purpose of residential schools:', a:['Preserve languages','Assimilation into Euro‑Canadian culture','Provide equal education','Train leaders'], c:1},
-      {q:'A practical reconciliation action for dealerships:', a:['Avoid hiring Indigenous staff','Partner with Indigenous‑owned suppliers','Use stereotypes in marketing','Skip acknowledgments'], c:1}
+      // 4) Sixties Scoop (video: _nmd6HXKXYU)
+      { id:'m4', videoId:'_nmd6HXKXYU', title:'Module 4 — The Sixties Scoop',
+        lesson:`<p>The <strong>Sixties Scoop</strong> saw large-scale removals of Indigenous children into the child-welfare system, severing language, culture, and family ties. Intergenerational impacts continue. In dealerships, use a trauma-informed approach: patience, privacy, and plain-language consent.</p>`,
+        quiz:[
+          { q:"What does the term “Sixties Scoop” refer to?",
+            a:["A 1960s federal scholarship program","Large-scale removal of Indigenous children into the child-welfare system","A temporary school lunch initiative","A residential-school rebuilding plan"],
+            c:1, e:"Tens of thousands of children were taken and placed in care."
+          },
+          { q:"Which harm is highlighted?",
+            a:["Improved graduation rates","Cultural loss and long-term trauma","Increased language retention","Guaranteed employment in cities"],
+            c:1, e:"Family separation led to cultural disconnection and trauma."
+          },
+          { q:"A trauma-informed action for dealerships is to:",
+            a:["Discuss status/personal history publicly","Be patient, use plain language, and offer privacy for sensitive documents","Refuse to answer questions","Require customers to share personal histories"],
+            c:1, e:"Patience, clarity, and privacy create cultural safety."
+          },
+          { q:"Why does listening to Survivors/families matter?",
+            a:["It replaces all other actions","It provides truth that guides respectful change at work","It’s optional","It mainly entertains"],
+            c:1, e:"Truth-telling informs concrete, respectful practice changes."
+          },
+          { q:"Which next step aligns with this learning?",
+            a:["Wait for new laws","Integrate survivor-informed training and adjust procedures","Avoid the topic","Use stereotypes to speed sales"],
+            c:1, e:"Apply learning via training and trauma-informed procedures."
+          }
+        ]
+      },
+
+      // 5) UNDRIP (video: -Tq7Mnlavqs)
+      { id:'m5', videoId:'-Tq7Mnlavqs', title:'Module 5 — UNDRIP (Framework & FPIC)',
+        lesson:`<p><strong>UNDRIP</strong> is a human-rights framework to align international, domestic (constitutional), and Indigenous laws. A core principle is <strong>FPIC</strong>—Free, Prior and Informed Consent—guiding decisions that affect Indigenous peoples.</p>`,
+        quiz:[
+          { q:"What role does UNDRIP play in Canada’s legal landscape, per the video?",
+            a:["It replaces the Constitution","It’s mainly symbolic","It provides a framework to align international, domestic, and Indigenous laws","It focuses only on resource revenues"],
+            c:2, e:"UNDRIP helps braid/align legal traditions for implementation."
+          },
+          { q:"Which organizations present the video?",
+            a:["CIGI and the Wiyasiwewin Mikiwahp Native Law Centre","UN Security Council","NHL & CBC Sports","Parliament of the UK"],
+            c:0, e:"It’s a CIGI project with the Native Law Centre."
+          },
+          { q:"What principle does UNDRIP emphasize for decisions affecting Indigenous peoples?",
+            a:["Majority rule only","Free, Prior and Informed Consent (FPIC)","First-come, first-served","Private contracts between settlers"],
+            c:1, e:"FPIC is central to UNDRIP."
+          },
+          { q:"How does the video characterize Canada–Indigenous relations over time?",
+            a:["Static and unchanging","Purely economic since Confederation","Evolving since first contact; harmonization of legal traditions is needed","Completed by historic treaties"],
+            c:2, e:"It highlights change and the need to harmonize legal traditions."
+          },
+          { q:"Moving toward UNDRIP implementation involves:",
+            a:["Only risks","Only opportunities","Both risks and opportunities","No change"],
+            c:2, e:"Implementation brings both risk and opportunity."
+          }
+        ]
+      },
+
+      // 6) Section 87 & Sales Tax (video: JFgftoW0-5o)
+      { id:'m6', videoId:'JFgftoW0-5o', title:'Module 6 — Section 87 & Sales Tax (Auto Context)',
+        lesson:`<p><strong>Section 87 of the Indian Act</strong> exempts personal property of a Status Indian situated on a reserve from taxation. Most Indigenous people pay the same taxes as others; exemptions apply only in defined circumstances. Verify respectfully and follow current CRA/provincial guidance.</p>`,
+        quiz:[
+          { q:"What central myth does the video challenge?",
+            a:["That only some taxes exist","That all Indigenous people don’t pay any taxes","That GST doesn’t apply to cars","That only provinces collect tax"],
+            c:1, e:"The blanket “no taxes” claim is false."
+          },
+          { q:"Roughly how many Indigenous people pay the same taxes as everyone else?",
+            a:["About 10%","About 40%","More than 80%","100%"],
+            c:2, e:"The video states more than 80%."
+          },
+          { q:"How is eligibility for tax exemptions framed?",
+            a:["Automatic for anyone who self-identifies","A perk granted by businesses","Defined by specific legal and situational criteria","A municipal decision"],
+            c:2, e:"Eligibility depends on law and context, not blanket rules."
+          },
+          { q:"Why discuss the 'why' before 'who qualifies'?",
+            a:["To promote avoidance","To ground the discussion in history/law, not misconceptions","To advertise a product","To focus only on provincial rules"],
+            c:1, e:"Grounding in law/history corrects myths."
+          },
+          { q:"Which statement best reflects the core message?",
+            a:["Exemptions are universal and unconditional","Exemptions apply only under defined conditions; most people pay standard taxes","Only income tax is affected","Exemptions are set by individual dealerships"],
+            c:1, e:"Exemptions are limited and conditional."
+          }
+        ]
+      },
+
+      // 7) Indian Trust Fund (video: lrHcjSFj2V0)
+      { id:'m7', videoId:'lrHcjSFj2V0', title:'Module 7 — Indian Trust Fund (History & Myths)',
+        lesson:`<p>The <strong>Indian Trust Fund</strong> is money the Crown holds “for the use and benefit of First Nations.” Sources include sales/leases of reserve lands and resource royalties. Over time it was consolidated into the federal <em>Consolidated Revenue Fund</em>; records show inconsistent management and losses. Use this to dispel myths and guide respectful financial conversations.</p>`,
+        quiz:[
+          { q:"What is the Indian Trust Fund?",
+            a:["A private charity","An account the Crown holds for the use and benefit of First Nations","A provincial lottery fund","A one-time settlement created in 1996"],
+            c:1, e:"It is money held by the Crown for First Nations’ benefit."
+          },
+          { q:"Today, where is the Trust Fund held?",
+            a:["A private bank abroad","Each Band’s local account","Inside Canada’s Consolidated Revenue Fund (CRF)","A UN escrow account"],
+            c:2, e:"It now exists within the federal CRF."
+          },
+          { q:"A common source of Trust deposits is:",
+            a:["Municipal property taxes","Royalties and revenues from natural resources and land sales/leases","Only federal income tax","International aid"],
+            c:1, e:"Includes land sales/leases and resource royalties."
+          },
+          { q:"Historically, Trust money has been used to pay:",
+            a:["Only private business loans","Treaty annuities, teachers, implements, capital projects, and sometimes settler infrastructure","Foreign embassies","Only residential school construction"],
+            c:1, e:"Records show both First Nations expenses and some settler-benefiting works."
+          },
+          { q:"Which management issue appears in the historical record?",
+            a:["Perfect auditing","Haphazard records with miscalculations and losses","Full community control since 1858","Use only for emergency relief"],
+            c:1, e:"Documentation points to inconsistent management and losses."
+          }
+        ]
+      }
     ];
 
-    function shuffle(arr){ return arr.map(v=>[Math.random(),v]).sort((a,b)=>a[0]-b[0]).map(v=>v[1]); }
+    // ---------- YouTube players & gating ----------
+    let videoFlags = storage.getVideo();
+    function isVideoDone(id){ return !!videoFlags[id]; }
+    function setVideoDone(id){
+      videoFlags[id] = true; storage.setVideo(videoFlags);
+      const msg = document.getElementById(id+'-watchMsg');
+      if(msg){ msg.textContent = 'Video complete ✓'; msg.classList.remove('muted'); }
+      const start = document.getElementById(id+'-start'); if(start){ start.disabled = false; }
+    }
+    const ytPlayers = {};
+    function mountModuleVideo(mod){
+      if(!mod.videoId) return;
+      const el = document.getElementById(mod.id+'-video'); if(!el) return;
+      ytPlayers[mod.id] = new YT.Player(el, {
+        videoId: mod.videoId,
+        host: 'https://www.youtube-nocookie.com',
+        playerVars: { rel:0, modestbranding:1, cc_load_policy:1 },
+        events: { onStateChange: (e)=>{ if(e.data === YT.PlayerState.ENDED){ setVideoDone(mod.id); } } }
+      });
+    }
+    window.onYouTubeIframeAPIReady = function(){ modules.forEach(m => mountModuleVideo(m)); };
 
+    // ---------- build modules UI ----------
+    const scores = storage.getModuleScores();
+    const modulesRoot = document.getElementById('modules');
+    modules.forEach((m) => {
+      const sec = document.createElement('section');
+      sec.className = 'card module'; sec.id = m.id;
+      const watched = isVideoDone(m.id);
+      const passed = scores[m.id] && scores[m.id] >= PASS;
+      sec.innerHTML = `
+        <h2>${m.title}</h2>
+        <div class="lesson">${m.lesson}</div>
+        <div class="video-wrap"><div id="${m.id}-video"></div></div>
+        <div id="${m.id}-watchMsg" class="muted">${watched ? 'Video complete ✓' : 'Watch the video to unlock the quiz.'}</div>
+        <div class="notice">Pass the quiz with <strong>${PASS}%</strong> to complete this module.</div>
+        <div class="quiz" id="${m.id}-quiz"></div>
+        <div>
+          <button class="btn" id="${m.id}-start" ${(!watched || passed)?'disabled':''}>Start Quiz</button>
+          <button class="btn alt" id="${m.id}-retry" disabled>Retry</button>
+          <span class="muted" id="${m.id}-status"></span>
+        </div>
+      `;
+      modulesRoot.appendChild(sec);
+    });
+
+    // ---------- progress & unlock exam ----------
+    function updateProgress(){
+      const s = storage.getModuleScores();
+      const passed = Object.keys(s).filter(k => s[k] >= PASS).length;
+      const total = modules.length;
+      $('#progressBar').style.width = (passed/total*100)+'%';
+      $('#progressText').textContent = passed+'/'+total+' modules passed';
+      $('#footerProgress').textContent = passed+'/'+total;
+      const unlocked = passed===total;
+      $('#examLocked').classList.toggle('hidden', unlocked);
+      $('#examForm').classList.toggle('hidden', !unlocked);
+      if(unlocked) renderExam();
+    }
+    updateProgress();
+
+    // ---------- wire quizzes ----------
+    modules.forEach(m => {
+      const startBtn = document.getElementById(`${m.id}-start`);
+      const retryBtn = document.getElementById(`${m.id}-retry`);
+      const statusEl = document.getElementById(`${m.id}-status`);
+      const quizWrap = document.getElementById(`${m.id}-quiz`);
+
+      function renderQuiz(){
+        const qs = m.quiz;
+        quizWrap.innerHTML = '';
+        qs.forEach((item,i)=>{
+          const div = document.createElement('div');
+          div.className = 'q';
+          const name = `${m.id}_q${i}`;
+          div.innerHTML = '<strong>Q'+(i+1)+'.</strong> '+item.q +
+            item.a.map((opt,ai)=>`<label><input type="radio" name="${name}" value="${ai}"> ${opt}</label>`).join('') +
+            '<div class="explain hidden"></div>';
+          quizWrap.appendChild(div);
+        });
+      }
+
+      function gradeQuiz(){
+        const qs = m.quiz;
+        let correct = 0;
+        const blocks = quizWrap.querySelectorAll('.q');
+        blocks.forEach((blk,i)=>{
+          const chosen = blk.querySelector('input[type=radio]:checked');
+          const exp = blk.querySelector('.explain');
+          if(chosen){
+            if(Number(chosen.value)===qs[i].c){ correct++; exp.classList.remove('hidden'); exp.innerHTML = '<strong>Correct.</strong> '+qs[i].e; }
+            else { exp.classList.remove('hidden'); exp.innerHTML = '<strong>Explanation:</strong> '+qs[i].e; }
+          } else {
+            exp.classList.remove('hidden'); exp.innerHTML = '<strong>Note:</strong> '+qs[i].e;
+          }
+        });
+        const pct = Math.round((correct/qs.length)*100);
+        const pass = pct >= PASS;
+        statusEl.innerHTML = '<span class="score">Score: '+pct+'%</span> '+(pass?'✅ Passed':'❌ Not passed');
+        retryBtn.disabled = false;
+        if(pass){
+          const s = storage.getModuleScores();
+          s[m.id] = pct; storage.setModuleScores(s);
+          updateProgress();
+          startBtn.disabled = true;
+          retryBtn.disabled = true;
+          statusEl.innerHTML += ' — Module complete';
+        }
+      }
+
+      if(startBtn){
+        startBtn.addEventListener('click', ()=>{
+          renderQuiz();
+          const submit = document.createElement('button');
+          submit.className = 'btn'; submit.textContent = 'Submit Quiz'; submit.type = 'button';
+          submit.addEventListener('click', gradeQuiz);
+          quizWrap.appendChild(submit);
+          startBtn.disabled = true;
+          retryBtn.disabled = true;
+          statusEl.textContent = '';
+        });
+      }
+      if(retryBtn){
+        retryBtn.addEventListener('click', ()=>{
+          renderQuiz();
+          const submit = document.createElement('button');
+          submit.className = 'btn'; submit.textContent = 'Submit Quiz'; submit.type = 'button';
+          submit.addEventListener('click', gradeQuiz);
+          quizWrap.appendChild(submit);
+          retryBtn.disabled = true;
+          statusEl.textContent = '';
+        });
+      }
+    });
+
+    // ---------- profile + reset ----------
+    (function initProfile(){
+      const p = storage.getProfile();
+      if(p.name) $('#fullName').value = p.name;
+      if(p.email) $('#email').value = p.email;
+    })();
+    $('#saveProfile').addEventListener('click', ()=>{
+      const name = $('#fullName').value.trim();
+      const email = $('#email').value.trim();
+      storage.setProfile({name,email});
+      $('#saveMsg').textContent = name? 'Saved for '+name : 'Saved';
+    });
+    $('#resetBtn').addEventListener('click', ()=>{ if(confirm('Reset your progress and exam?')){ storage.reset(); location.reload(); } });
+
+    // ---------- final exam (random 20 from all module banks) ----------
+    function aggregateExamBank(){
+      let all=[]; modules.forEach(m=> m.quiz.forEach(q=> all.push({m:m.id, q:q.q, a:q.a, c:q.c}) ));
+      return all;
+    }
+    const EXAM_BANK = aggregateExamBank();
     function renderExam(){
-      const shuffled = shuffle(bank);
-      const wrap = $('#examContainer');
-      wrap.innerHTML = '';
-      shuffled.forEach((item,idx)=>{
-        const div = document.createElement('div');
-        div.className='q';
-        const qid = `q_${idx}`;
-        div.innerHTML = `<div class="qnum"><strong></strong> ${item.q}</div>` +
-          item.a.map((opt,i)=>{
-            const oid = `${qid}_${i}`;
-            return `<label><input type="radio" name="${qid}" value="${i}"> ${opt}</label>`
-          }).join('');
+      const examQs = shuffle(EXAM_BANK).slice(0,20);
+      const wrap = $('#examContainer'); wrap.innerHTML='';
+      examQs.forEach((item,idx)=>{
+        const div = document.createElement('div'); div.className='q';
+        const name = 'exam_q_'+idx;
+        div.innerHTML = '<strong>Q'+(idx+1)+'.</strong> '+item.q +
+          item.a.map((opt,i)=>`<label><input type="radio" name="${name}" value="${i}"> ${opt}</label>`).join('');
         wrap.appendChild(div);
       });
+      wrap.dataset.exam = JSON.stringify(examQs);
     }
 
-    function gradeExam(){
-      const renderedQs = $$('#examContainer .q');
-      let correct = 0;
-      renderedQs.forEach(div=>{
-        const text = div.firstChild.textContent.trim();
-        const origIndex = bank.findIndex(b=>text.endsWith(b.q));
-        const chosen = div.querySelector('input[type=radio]:checked');
-        if(chosen && origIndex>-1){
-          if(Number(chosen.value) === bank[origIndex].c) correct++;
-        }
-      });
-      const total = bank.length;
-      const answered = renderedQs.filter(d=>d.querySelector('input[type=radio]:checked')).length;
-      const score = Math.round((correct / total) * 100);
-      return {score, correct, total, answered};
-    }
+    $('#examForm').addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const wrap = $('#examContainer'); const qs = JSON.parse(wrap.dataset.exam);
+      let correct = 0; const blocks = $$('#examContainer .q');
+      blocks.forEach((blk,i)=>{ const chosen = blk.querySelector('input[type=radio]:checked'); if(chosen && Number(chosen.value)===qs[i].c) correct++; });
+      const score = Math.round((correct/qs.length)*100); const passed = score>=PASS;
+      const res = $('#examResult'); res.classList.remove('hidden');
+      res.innerHTML = '<div class="card">Your score: <strong>'+score+'%</strong> ('+correct+'/'+qs.length+'). '+(passed?'✅ Passed':'❌ Not passed')+'</div>';
+      storage.setExam({score,passed,ts:Date.now()});
 
-    function uuid(){ return 'xxxxxx-xxxx-4xxx-yxxx-xxxxxx'.replace(/[xy]/g,c=>{const r=Math.random()*16|0,v=c=='x'?r:(r&0x3|0x8);return v.toString(16)}); }
-
-    async function submitNetlify({name,email,score,passed,certificateId}){
+      const profile = storage.getProfile(); const certificateId = uuid();
       const data = new FormData();
-      data.append('form-name','exam-submissions');
-      data.append('fullName',name||'');
-      data.append('email',email||'');
-      data.append('score',String(score));
-      data.append('passed',passed?'true':'false');
-      data.append('certificateId',certificateId);
-      data.append('timestamp',new Date().toISOString());
-      data.append('industry','Auto Sales');
-      try{
-        await fetch('/',{method:'POST',body:data});
-      }catch(e){ console.warn('Netlify submission failed (offline/local dev?)',e); }
-    }
+      data.append('form-name','exam-submissions'); data.append('fullName',profile.name||''); data.append('email',profile.email||'');
+      data.append('score',String(score)); data.append('passed',passed?'true':'false'); data.append('certificateId',certificateId);
+      data.append('timestamp',new Date().toISOString()); data.append('industry','Auto Sales');
+      try{ await fetch('/',{method:'POST',body:data}); }catch(e){ console.warn('Netlify submission skipped.', e); }
 
-    async function generateCertificate({name,score,certificateId}){
+      if(passed){
+        $('#certificateBlock').classList.remove('hidden');
+        $('#downloadCert').onclick = ()=> generateCertificate({name:profile.name||'Learner', score, certificateId});
+        document.getElementById('certificateBlock').scrollIntoView({behavior:'smooth'});
+      }
+    });
+
+    // ---------- certificate ----------
+    async function generateCertificate({name, score, certificateId}){
       const { jsPDF } = window.jspdf;
       const doc = new jsPDF({orientation:'landscape', unit:'pt', format:'letter'});
-      const W = doc.internal.pageSize.getWidth();
-      const H = doc.internal.pageSize.getHeight();
+      const W = doc.internal.pageSize.getWidth(); const H = doc.internal.pageSize.getHeight();
 
-      // Solid background (compatible across browsers)
-      doc.setFillColor(13,43,58); // navy
-      doc.rect(0,0,W,H,'F');
+      // Background
+      doc.setFillColor(13,43,58); doc.rect(0,0,W,H,'F');
+      // Beadwork border
+      doc.setFillColor(31,183,176); for(let x=24;x<W-24;x+=22){ doc.circle(x,28,4,'F'); doc.circle(x,H-28,4,'F'); }
+      // Steering wheel watermark
+      doc.setDrawColor(255,255,255); doc.setLineWidth(3);
+      doc.circle(W/2,H/2,130); doc.circle(W/2,H/2,60);
+      doc.line(W/2-60,H/2,W/2+60,H/2); doc.line(W/2,H/2-60,W/2,H/2+60);
 
-      // Beadwork borders
-      doc.setFillColor(31,183,176);
-      for(let x=24;x<W-24;x+=22){ doc.circle(x,28,4,'F'); doc.circle(x,H-28,4,'F'); }
-
-      // Steering wheel watermark (light)
-      doc.setDrawColor(255,255,255); doc.setLineWidth(2);
+      // Text
       doc.setTextColor(255,255,255);
-      doc.setFont('helvetica','normal');
-
-      doc.setDrawColor(255,255,255);
-      doc.setLineWidth(3);
-      doc.setTextColor(255,255,255);
-
-      doc.setDrawColor(255,255,255);
-      doc.setLineWidth(3);
-      doc.circle(W/2,H/2,130);
-      doc.circle(W/2,H/2,60);
-      doc.line(W/2-60,H/2,W/2+60,H/2);
-      doc.line(W/2,H/2-60,W/2,H/2+60);
-
-      // Title
-      doc.setTextColor(255,255,255); doc.setFontSize(28); doc.setFont('helvetica','bold');
+      doc.setFont('helvetica','bold'); doc.setFontSize(28);
       doc.text('Certificate of Completion', W/2, 90, {align:'center'});
-
-      // Body
-      doc.setTextColor(255,255,255); doc.setFontSize(16); doc.setFont('helvetica','normal');
+      doc.setFontSize(16); doc.setFont('helvetica','normal');
       doc.text('This certifies that', W/2, 140, {align:'center'});
       doc.setFontSize(30); doc.setFont('helvetica','bold');
-      doc.text(name || 'Learner', W/2, 180, {align:'center'});
+      doc.text(name, W/2, 180, {align:'center'});
       doc.setFontSize(16); doc.setFont('helvetica','normal');
       doc.text('has successfully completed the course', W/2, 215, {align:'center'});
       doc.setFont('helvetica','bold');
-      doc.text('TRC Call to Action 92 — Corporate Canada Training (Auto Sales Edition)', W/2, 245, {align:'center', maxWidth: W-140});
-      doc.setFont('helvetica','normal');
+      doc.text('TRC 92 — Corporate Canada Training (Auto Sales Edition)', W/2, 245, {align:'center', maxWidth: W-140});
       const date = new Date().toLocaleDateString();
+      doc.setFont('helvetica','normal');
       doc.text(`on ${date}, achieving a passing score of 70% or higher.`, W/2, 275, {align:'center'});
-
-      // Footer
-      doc.setFontSize(12); doc.setTextColor(255,255,255);
-      doc.text(`Brooke Ashley Group  •  Certificate ID: ${certificateId}  •  Score: ${score}%`, W/2, H-40, {align:'center'});
-
+      doc.setFontSize(12);
+      doc.text(`Brooke Ashley Group • Certificate ID: ${certificateId} • Score: ${score}%`, W/2, H-40, {align:'center'});
       doc.save(`TRC92_AutoSales_Certificate_${certificateId}.pdf`);
     }
-
-    // ---------- Event wiring ----------
-    document.addEventListener('DOMContentLoaded',()=>{
-      // Prefill profile
-      if(profile.name) $('#fullName').value = profile.name;
-      if(profile.email) $('#email').value = profile.email;
-      updateProgress();
-      renderExam();
-
-      $('#saveProfile').addEventListener('click',saveProfile);
-      $$('button[data-complete]').forEach(btn=>{
-        btn.addEventListener('click',()=>{
-          const idx = btn.getAttribute('data-complete');
-          // Require answering the quick check
-          const mod = btn.closest('.module');
-          const hasRadios = !!mod.querySelector('input[type=radio]');
-          const answered = !!mod.querySelector('input[type=radio]:checked');
-          if(hasRadios && !answered){
-            alert('Please answer the quick check first.');
-            return;
-          }
-          markComplete(idx);
-        });
-      });
-
-      $('#resetBtn').addEventListener('click',()=>{
-        if(confirm('Reset your progress and exam?')){
-          localStorage.removeItem('trc92_profile');
-          localStorage.removeItem('trc92_completed');
-          localStorage.removeItem('trc92_exam');
-          location.reload();
-        }
-      });
-
-      $('#examForm').addEventListener('submit', async (e)=>{
-        e.preventDefault();
-        const {score,correct,total,answered} = gradeExam();
-        const passed = score >= 70;
-        const name = (JSON.parse(localStorage.getItem('trc92_profile')||'{}').name)||'';
-        const email = (JSON.parse(localStorage.getItem('trc92_profile')||'{}').email)||'';
-        const certificateId = uuid();
-        const res = $('#examResult');
-        res.classList.remove('hidden');
-        res.innerHTML = `<div class="card">Your score: <strong>${score}%</strong> (${correct}/${total}). ${passed? '✅ Passed.':'❌ Not passed.'} ${answered<total? '<div class="muted">You did not answer all questions.</div>':''}</div>`;
-        localStorage.setItem('trc92_exam', JSON.stringify({score,passed,ts:Date.now()}));
-
-        // Submit to Netlify Forms (so you have records)
-        await submitNetlify({name,email,score,passed,certificateId});
-
-        if(passed){
-          $('#certificateBlock').classList.remove('hidden');
-          $('#downloadCert').onclick = ()=> generateCertificate({name,score,certificateId});
-          document.getElementById('certificateBlock').scrollIntoView({behavior:'smooth'});
-        } else {
-          alert('You can review the modules and retake the exam once. Reload the page to retake.');
-        }
-      });
-    });
   </script>
 </body>
 </html>
