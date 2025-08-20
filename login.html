@@ -15,6 +15,7 @@
     .btn{appearance:none;border:0;border-radius:12px;padding:14px 18px;font-weight:800;background:var(--turquoise);color:#fff;cursor:pointer;transition:.2s transform,.2s box-shadow}
     .btn:hover{transform:translateY(-1px);box-shadow:0 10px 20px rgba(0,0,0,.12)}
     .muted{opacity:.75}
+    .hidden{display:none}
     footer{padding:18px;text-align:center;color:#555}
     a{color:#0f8e89}
   </style>
@@ -29,9 +30,17 @@
 
   <main class="wrap">
     <div class="card" style="text-align:center">
-      <p>Only invited dealers can access this area. Click the button to sign in.</p>
-      <button class="btn" onclick="netlifyIdentity.open()">Sign in</button>
-      <p class="muted" style="margin-top:10px">If you don’t have access yet, ask your admin to invite your email.</p>
+      <p>Only invited dealers can access this area.</p>
+      <div id="authActions">
+        <button class="btn" id="openLogin">Sign in</button>
+        <p class="muted" style="margin-top:10px">If you don’t have access yet, ask your admin to invite your email.</p>
+      </div>
+
+      <div id="notAuthorized" class="hidden">
+        <h3 style="margin:0 0 6px">Account not authorized</h3>
+        <p class="muted">You’re signed in, but your account doesn’t have <strong>dealer</strong> access yet. Ask your admin to add the <code>dealer</code> role to your user.</p>
+        <button class="btn" id="logout">Log out</button>
+      </div>
     </div>
   </main>
 
@@ -40,13 +49,63 @@
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    if (window.netlifyIdentity) {
+
+    const openLoginBtn = document.getElementById('openLogin');
+    const notAuth = document.getElementById('notAuthorized');
+    const authActions = document.getElementById('authActions');
+    const logoutBtn = document.getElementById('logout');
+
+    function hasDealerRole(user){
+      const roles = (user && user.app_metadata && user.app_metadata.roles) || [];
+      return roles.includes('dealer');
+    }
+
+    function goPortal(){ window.location.href = '/dealers/portal.html'; }
+
+    // Wire buttons
+    openLoginBtn.addEventListener('click', () => {
+      if (window.netlifyIdentity) netlifyIdentity.open('login');
+    });
+    if (logoutBtn){
+      logoutBtn.addEventListener('click', () => {
+        if (window.netlifyIdentity) netlifyIdentity.logout();
+      });
+    }
+
+    // Init Identity + behavior
+    if (window.netlifyIdentity){
       netlifyIdentity.on('init', user => {
-        if (user) window.location.href='/dealers/portal.html';
+        if (user){
+          // Already logged in
+          if (hasDealerRole(user)) {
+            goPortal();
+          } else {
+            authActions.classList.add('hidden');
+            notAuth.classList.remove('hidden');
+          }
+        } else {
+          // Not logged in: auto-open the login modal for convenience
+          netlifyIdentity.open('login');
+        }
       });
+
       netlifyIdentity.on('login', user => {
-        window.location.href='/dealers/portal.html';
+        if (hasDealerRole(user)) {
+          goPortal();
+        } else {
+          netlifyIdentity.close();
+          authActions.classList.add('hidden');
+          notAuth.classList.remove('hidden');
+        }
       });
+
+      netlifyIdentity.on('logout', () => {
+        notAuth.classList.add('hidden');
+        authActions.classList.remove('hidden');
+      });
+
+      // Start Identity
+      netlifyIdentity.init();
     }
   </script>
 </body>
