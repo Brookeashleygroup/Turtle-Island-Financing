@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dealer Login — Turtle Island Financing</title>
+  <meta name="description" content="Secure dealer login for Turtle Island Financing training and resources.">
+  <style>
+    :root{--turquoise:#1fb7b0;--navy:#0d2b3a;--ink:#102129;--border:#e5e9ee;--cloud:#f7f9fa}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--cloud);line-height:1.5}
+    .wrap{max-width:760px;margin:0 auto;padding:24px 16px}
+    header{background:linear-gradient(135deg,var(--navy),var(--turquoise));color:#fff;padding:28px 16px}
+    h1{margin:0 0 6px}
+    .card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:0 6px 22px rgba(16,33,41,.06);margin-top:-20px}
+    .btn{appearance:none;border:0;border-radius:12px;padding:14px 18px;font-weight:800;background:var(--turquoise);color:#fff;cursor:pointer;transition:.2s transform,.2s box-shadow}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 10px 20px rgba(0,0,0,.12)}
+    .muted{opacity:.75}
+    footer{padding:18px;text-align:center;color:#555}
+    a{color:#0f8e89}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Dealer Login</h1>
+      <p class="muted">Access the dealer portal and TRC 92 Auto Sales Training</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="card" style="text-align:center">
+      <p>Only invited dealers can access this area. Click the button to sign in.</p>
+      <button class="btn" onclick="netlifyIdentity.open()">Sign in</button>
+      <p class="muted" style="margin-top:10px">If you don’t have access yet, ask your admin to invite your email.</p>
+    </div>
+  </main>
+
+  <footer>© <span id="year"></span> Turtle Island Financing</footer>
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    if (window.netlifyIdentity) {
+      netlifyIdentity.on('init', user => {
+        if (user) window.location.href='/dealers/portal.html';
+      });
+      netlifyIdentity.on('login', user => {
+        window.location.href='/dealers/portal.html';
+      });
+    }
+  </script>
+</body>
+</html>

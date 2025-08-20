@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dealer Portal — Turtle Island Financing</title>
+  <meta name="description" content="Dealer resources and training portal.">
+  <style>
+    :root{--turquoise:#1fb7b0;--navy:#0d2b3a;--ink:#102129;--border:#e5e9ee;--cloud:#f7f9fa}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--cloud);line-height:1.5}
+    .wrap{max-width:1000px;margin:0 auto;padding:24px 16px 80px}
+    header{background:linear-gradient(135deg,var(--navy),var(--turquoise));color:#fff;padding:28px 16px}
+    h1{margin:0 0 6px}
+    .grid{display:grid;gap:16px;grid-template-columns:1fr}
+    @media (min-width:920px){.grid{grid-template-columns:1fr 1fr}}
+    .card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:0 6px 22px rgba(16,33,41,.06)}
+    .btn{appearance:none;border:0;border-radius:12px;padding:14px 18px;font-weight:800;background:var(--turquoise);color:#fff;cursor:pointer;transition:.2s transform,.2s box-shadow;text-decoration:none;display:inline-block}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 10px 20px rgba(0,0,0,.12)}
+    .muted{opacity:.75}
+    .topbar{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    a{color:#0f8e89}
+    .pill{display:inline-block;background:#e9f7f6;color:#0f8e89;border-radius:999px;padding:6px 10px;font-weight:700;font-size:12px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap topbar">
+      <div>
+        <h1>Dealer Portal</h1>
+        <div class="muted" id="who"></div>
+      </div>
+      <div>
+        <button class="btn" id="logoutBtn">Log out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="grid">
+      <div class="card">
+        <div class="pill">Training</div>
+        <h2>TRC 92 — Auto Sales Edition</h2>
+        <p>Indigenous‑led, self‑paced course. Pass with 70%+ and download a certificate with unique ID.</p>
+        <a class="btn" href="/dealers/trc92/">Start Training</a>
+      </div>
+      <div class="card">
+        <div class="pill">Docs</div>
+        <h2>Standards &amp; Supports</h2>
+        <p>Access dealership standards, supports, and verification docs if your admin has published them.</p>
+        <p class="muted">You can link existing pages like <code>/standards.html</code>, <code>/supports.html</code>, etc.</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    // Guard: if not logged in, send to login
+    function toLogin(){ window.location.href='/login.html'; }
+    netlifyIdentity.on('init', user => {
+      if (!user) return toLogin();
+      const name = user.user_metadata && user.user_metadata.full_name || user.email;
+      document.getElementById('who').textContent = 'Signed in as ' + name;
+    });
+    netlifyIdentity.on('logout', () => toLogin());
+    netlifyIdentity.init();
+
+    document.getElementById('logoutBtn').onclick = () => netlifyIdentity.logout();
+  </script>
+</body>
+</html>
