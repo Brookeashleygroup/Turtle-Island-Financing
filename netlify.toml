@@ -1,3 +1,15 @@
 [functions]
 directory = "netlify/functions"
 node_bundler = "esbuild"
+# Only users with role "dealer" can access /dealers/*
+[[redirects]]
+  from = "/dealers/*"
+  to = "/dealers/:splat"
+  status = 200
+  conditions = { Role = ["dealer"] }
+
+# Everyone else gets sent to the login page
+[[redirects]]
+  from = "/dealers/*"
+  to = "/login.html"
+  status = 302
