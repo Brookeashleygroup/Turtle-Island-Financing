@@ -31,7 +31,9 @@ h1,h2,h3,h4 { font-weight: 700; margin-bottom: .5em; }
 .hero-copy h2 { font-size:2rem; margin-bottom:1rem; }
 .slogan { font-size:1.15rem; font-weight:600; color:#ffd54f; margin:.5rem 0 1rem; }
 .hero-ctas a { margin-right:1rem; margin-bottom:1rem; }
-.hero-art img { max-width:500px; border-radius:1rem; box-shadow:0 8px 20px rgba(0,0,0,.3); }
+.hero-art { max-width:500px; }
+.hero-art img { width:100%; border-radius:1rem; box-shadow:0 8px 20px rgba(0,0,0,.3); display:block; }
+.hero-caption { font-size:.85rem; opacity:.9; margin-top:.5rem; color:#e7fff8; }
 
 /* Buttons */
 .btn { display:inline-block; padding:.75rem 1.5rem; border-radius:6px; font-weight:600; background:#26a69a; color:#fff; transition:all .2s; }
@@ -106,5 +108,6 @@ aside.trust { flex:1; background:#f9f9f9; border-radius:1rem; padding:1.5rem; bo
 @media (max-width: 768px) {
   .hero-grid, .grid { flex-direction: column; }
   .hero-copy h2 { font-size:1.6rem; }
+  .hero-art { max-width:100%; }
   .hero-art img { max-width:100%; }
 }
