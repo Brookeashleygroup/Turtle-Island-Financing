@@ -1,253 +1,122 @@
 /* ===========================
-   Turtle Island Financing Styles
+   Turtle Island Financing — Styles (FULL OVERWRITE)
    =========================== */
 
-/* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Inter', Arial, sans-serif;
-  line-height: 1.6;
-  color: #111;
-  background-color: #fff;
-}
-
-/* Container */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+/* Reset & Base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', Arial, sans-serif; line-height: 1.6; color:#111; background:#fff; }
+a { color: inherit; text-decoration: none; }
+h1,h2,h3,h4 { font-weight: 700; margin-bottom:.5rem; }
+.muted { color:#666; } .small { font-size:.85rem; }
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
 
 /* Header */
-header {
-  background: #004d40;
-  color: #fff;
-  padding: 1rem 0;
+.site-header { background:#004d40; color:#fff; padding:1rem 0; box-shadow:0 2px 6px rgba(0,0,0,.15); }
+.nav { display:flex; justify-content:space-between; align-items:center; gap:1rem; }
+.brand { display:flex; align-items:center; gap:.75rem; }
+.brand .logo { display:block; }
+.brand-text h1 { font-size:1.35rem; line-height:1.1; }
+.brand-text .tag { font-size:.85rem; opacity:.9; }
+.top-nav a { margin-left:1rem; padding:.5rem 1rem; border-radius:6px; transition:all .2s; }
+.top-nav a.btn { background:#00796b; color:#fff; }
+.top-nav a.btn:hover { background:#005a50; }
+.top-nav a.ghost { border:1px solid #fff; background:transparent; color:#fff; }
+.top-nav a.ghost:hover { background:#fff; color:#004d40; }
+
+/* Hero */
+.hero { position:relative; background: linear-gradient(135deg, #004d40, #00695c); color:#fff; padding:4rem 0; overflow:hidden; }
+.hero-grid { display:flex; flex-wrap:wrap; align-items:center; gap:2rem; }
+.hero-copy { flex:1 1 460px; }
+.hero-copy h2 { font-size:2.2rem; margin-bottom:1rem; }
+.slogan { font-size:1.15rem; font-weight:700; color:#ffd54f; margin:.5rem 0 1rem; }
+.hero-copy p { margin-bottom:1rem; }
+.hero-ctas { display:flex; flex-wrap:wrap; gap:1rem; margin-bottom:1rem; }
+
+/* Buttons */
+.btn { display:inline-block; padding:.75rem 1.5rem; border-radius:8px; font-weight:700; transition:all .2s; }
+.btn { background:#26a69a; color:#fff; }
+.btn:hover { background:#1b8e84; transform:translateY(-2px); }
+.btn.link { background:transparent; border:2px solid #ffd54f; color:#ffd54f; }
+.btn.link:hover { background:#ffd54f; color:#114; }
+.btn.wide { width:100%; text-align:center; }
+
+/* Trust “pills” */
+.pill-list { list-style:none; display:flex; flex-wrap:wrap; gap:.6rem; margin-top:.5rem; }
+.pill-list li { background: rgba(255,255,255,.18); padding:.45rem .85rem; border-radius:999px; font-size:.9rem; }
+
+/* Hero image + caption */
+.hero-art { flex:1 1 460px; display:flex; flex-direction:column; align-items:center; }
+.hero-art img { width:100%; max-width:560px; border-radius:16px; box-shadow:0 10px 24px rgba(0,0,0,.28); display:block; }
+.hero-caption{
+  display:inline-block;            /* size to content */
+  margin:.75rem auto 0 auto;       /* center below image */
+  text-align:center;
+  font-size:1rem;
+  font-style:italic;
+  font-weight:700;
+  color:#fff;
+  background:#e63946;              /* bold, playful tag */
+  padding:.45rem .8rem;
+  border-radius:8px;
+  box-shadow:0 2px 6px rgba(0,0,0,.2);
 }
 
-header .logo img {
-  height: 48px;
-}
+/* Truth in Financing */
+.truth-in-financing { padding:3rem 0; background:#fff; }
+.truth-in-financing .container > p { margin-top:.25rem; }
+.comparison { width:100%; border-collapse:collapse; margin-top:1.25rem; font-size:.95rem; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,.06); }
+.comparison th { background:#004d40; color:#fff; padding:.9rem; font-weight:700; }
+.comparison td { border:1px solid #eee; padding:.85rem; text-align:center; }
+.comparison tr:nth-child(even){ background:#fafafa; }
+.comparison td:first-child{ font-weight:700; text-align:left; }
+.comparison td:last-child{ background:#e8f5f3; color:#004d40; font-weight:700; }
+.cta-center{ text-align:center; margin-top:1rem; }
 
-nav {
-  display: flex;
-  justify-content: flex-end;
-  gap: 1rem;
-}
+/* Why Choose */
+.why-choose { padding:3rem 0; background:#f1f8f6; }
+.checklist { list-style:none; padding:0; }
+.checklist li { margin:.8rem 0; padding-left:2rem; position:relative; }
+.checklist li::before { content:"✔"; position:absolute; left:0; color:#00796b; font-weight:800; }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
+/* Apply / Form */
+.form-wrap { padding:3rem 0; }
+.grid { display:flex; flex-wrap:wrap; gap:2rem; }
+.form-card { flex:2; background:#fff; padding:2rem; border-radius:14px; box-shadow:0 8px 24px rgba(0,0,0,.08); }
+.form-card .row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+label { font-size:.92rem; font-weight:700; }
+.form-card input, .form-card select, .form-card textarea {
+  width:100%; padding:.75rem; margin-top:.3rem; margin-bottom:1rem; border-radius:8px; border:1px solid #cfcfcf;
 }
+.form-card input:focus, .form-card select:focus, .form-card textarea:focus {
+  outline:none; border-color:#26a69a; box-shadow:0 0 0 3px rgba(38,166,154,.25);
+}
+.consent { display:flex; align-items:flex-start; font-size:.88rem; }
+.consent input { margin-right:.6rem; margin-top:.25rem; }
 
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* Hero Section */
-.hero {
-  background: #00695c;
-  color: #fff;
-  padding: 3rem 0;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: center;
-}
-
-.hero-copy h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.hero-copy .slogan {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #ffd600;
-  margin-bottom: 1rem;
-}
-
-.hero-copy p {
-  margin-bottom: 1rem;
-}
-
-.hero-ctas {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.2s ease;
-}
-
-.btn {
-  background: #ffd600;
-  color: #111;
-}
-
-.btn:hover {
-  background: #ffeb3b;
-}
-
-.btn.link {
-  background: transparent;
-  border: 2px solid #ffd600;
-  color: #ffd600;
-}
-
-.btn.link:hover {
-  background: #ffd600;
-  color: #111;
-}
-
-/* Pills */
-.pill-list {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
-}
-
-.pill-list li {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0.4rem 0.8rem;
-  border-radius: 999px;
-  font-size: 0.9rem;
-}
-
-/* Hero Image & Caption */
-.hero-art {
-  text-align: center;
-}
-
-.hero-art img {
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-}
-
-.hero-caption {
-  margin-top: 0.75rem;
-  font-size: 1rem;
-  font-style: italic;
-  font-weight: 600;
-  color: #ffd600;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
-  display: inline-block;
-}
-
-/* Comparison Table */
-.comparison {
-  margin: 3rem 0;
-}
-
-.comparison table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-}
-
-.comparison th,
-.comparison td {
-  padding: 1rem;
-  border: 1px solid #ddd;
-}
-
-.comparison th {
-  background: #004d40;
-  color: #fff;
-}
-
-.comparison td:first-child {
-  font-weight: 600;
-}
-
-/* Form */
-form {
-  background: #f9f9f9;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-form label {
-  display: block;
-  margin-bottom: 0.25rem;
-  font-weight: 600;
-}
-
-form input,
-form select {
-  width: 100%;
-  padding: 0.6rem;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-form button {
-  background: #004d40;
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-form button:hover {
-  background: #00695c;
-}
+/* Trust box */
+aside.trust { flex:1; background:#f9f9f9; border-radius:14px; padding:1.5rem; box-shadow: inset 0 0 12px rgba(0,0,0,.05); }
+.ccab-badge { display:flex; align-items:center; gap:1rem; margin-bottom:1rem; }
+.ccab-text { font-size:.92rem; line-height:1.3; }
+.bullets { list-style:disc inside; color:#444; }
+.disclaimer { margin-top:1rem; }
 
 /* Footer */
-footer {
-  background: #004d40;
-  color: #fff;
-  padding: 2rem 0;
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-footer img {
-  height: 40px;
-  margin: 0.5rem;
-}
+.site-footer { background:#004d40; color:#fff; padding:2rem 0; text-align:center; }
+.site-footer nav a { margin:0 .6rem; font-size:.95rem; opacity:.9; }
+.site-footer nav a:hover { opacity:1; }
+.site-footer em { display:block; margin-top:.6rem; font-size:.92rem; opacity:.9; }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .hero-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  nav {
-    justify-content: center;
-  }
-
-  .hero-ctas {
-    justify-content: center;
-  }
+@media (max-width: 900px){
+  .form-card .row { grid-template-columns:1fr; }
+}
+@media (max-width: 820px){
+  .hero-grid { flex-direction:column; }
+  .hero-copy h2 { font-size:1.9rem; }
+}
+@media (max-width: 520px){
+  .btn { width:100%; text-align:center; }
+  .pill-list { gap:.45rem; }
+  .hero-caption{ font-size:.95rem; }
 }
