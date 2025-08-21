@@ -9,7 +9,7 @@
   <meta property="og:description" content="Keep your tax savings. Choose with confidence. No gimmicks, no pressure — just transparent Indigenous auto financing.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/hero-joyful-truck.png">
-  <link rel="icon" href="assets/logo-icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -20,7 +20,8 @@
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="/">
-        <img class="logo" src="assets/logo-full.svg" alt="Turtle Island Financing logo" height="40">
+        <!-- Using an existing asset so the logo shows up -->
+        <img class="logo" src="assets/hero-art.svg" alt="Turtle Island Financing logo" height="40">
         <div class="brand-text">
           <h1>Turtle Island Financing</h1>
           <p class="tag">100% Indigenous‑Owned • CCAB Certified</p>
@@ -55,7 +56,7 @@
       </div>
       <figure class="hero-art">
         <img src="assets/hero-joyful-truck.png" alt="Happy family with their new vehicle — Turtle Island Financing" loading="eager" fetchpriority="high" decoding="async">
-        <figcaption class="hero-caption">The only thing fake about Turtle Island Financing is this AI Picture</figcaption>
+        <figcaption class="hero-caption">the only thing fake about Turtle Island Financing is this AI Picture</figcaption>
       </figure>
     </div>
   </section>
@@ -181,7 +182,8 @@
       <aside class="trust">
         <h4>Trust &amp; Certification</h4>
         <div class="ccab-badge">
-          <img src="assets/logo-compact.svg" alt="Turtle Island Financing icon" height="52">
+          <!-- Use the clean file you already have -->
+          <img src="assets/ccab-cab-badge.png" alt="Certified Aboriginal Business (CAB) — CCAB" height="52">
           <div class="ccab-text"><strong>Certified Aboriginal Business (CAB)</strong><br>Verified by the Canadian Council for Aboriginal Business (CCAB)</div>
         </div>
         <ul class="bullets">
@@ -214,13 +216,5 @@
   </footer>
 
   <script src="script.js"></script>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script>
-    if (window.netlifyIdentity) {
-      netlifyIdentity.on('login', () => {
-        document.location.href = '/dealers/portal.html';
-      });
-    }
-  </script>
 </body>
 </html>
