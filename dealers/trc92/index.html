@@ -177,7 +177,9 @@
     <div><button class="btn alt" id="resetBtn">Reset Course</button></div>
   </footer>
 
+  <!-- YouTube IFrame API -->
   <script src="https://www.youtube.com/iframe_api"></script>
+  <!-- jsPDF -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <!-- PayPal (Sandbox). Replace client-id=sb with your live client ID when ready -->
   <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=CAD"></script>
@@ -337,7 +339,7 @@
       },
       // 5) UNDRIP (no producer question)
       { id:'m5', videoId:'-Tq7Mnlavqs', title:'Module 5 — UNDRIP (Framework & FPIC)',
-        lesson:`<p><strong>UNDRIP</strong> is a human-rights framework to align international, domestic (constitutional), and Indigenous laws. A core principle is <strong>FPIC</strong>—Free, Prior and Informed Consent—guiding decisions that affect Indigenous peoples.</p>`,
+        lesson:`<p><strong>UNDRIP</strong> is a human-rights framework to align international, domestic, and Indigenous laws. A core principle is <strong>FPIC</strong>—Free, Prior and Informed Consent—guiding decisions that affect Indigenous peoples.</p>`,
         quiz:[
           { q:"What role does UNDRIP play in Canada’s legal landscape?",
             a:["It replaces the Constitution","It provides a framework to align international, domestic, and Indigenous laws","It focuses only on resource revenues","It’s purely ceremonial"], c:1,
@@ -496,24 +498,58 @@
       modulesRoot.appendChild(sec);
     });
 
-    // ===== YouTube API mount =====
+    // ===== YouTube API mount (with origin, fallback, reinject) =====
+    const YT_ORIGIN = location.origin;
+    let USE_NOCOOKIE_HOST = true; // try privacy-enhanced first
+    let ytApiReadyFired = false;
+
     function mountModuleVideo(mod){
       if(!mod.videoId) return;
       const el = document.getElementById(mod.id+'-video'); if(!el) return;
+      el.innerHTML = ''; // clear any existing iframe
+
+      const host = USE_NOCOOKIE_HOST ? 'https://www.youtube-nocookie.com' : 'https://www.youtube.com';
       ytPlayers[mod.id] = new YT.Player(el, {
         videoId: mod.videoId,
-        host: 'https://www.youtube-nocookie.com',
-        playerVars: { rel:0, modestbranding:1, cc_load_policy:1 },
+        host,
+        playerVars: { rel:0, modestbranding:1, cc_load_policy:1, playsinline:1, origin: YT_ORIGIN },
         events: {
           onReady: (e)=>{ initWatch(mod.id, e.target.getDuration()); updateCoverage(mod.id); },
           onStateChange: (e)=>{
             if(e.data === YT.PlayerState.PLAYING){ startTick(mod.id); }
             else { stopTick(mod.id); if(e.data === YT.PlayerState.ENDED){ updateCoverage(mod.id); } }
+          },
+          onError: (e)=>{
+            if (USE_NOCOOKIE_HOST) {
+              console.warn('youtube-nocookie blocked; falling back to youtube.com for', mod.id, e);
+              USE_NOCOOKIE_HOST = false;
+              setTimeout(()=> mountModuleVideo(mod), 200);
+            } else {
+              const msg = document.getElementById(mod.id+'-watchMsg');
+              if(msg){
+                msg.innerHTML = "Video failed to load. Please disable blockers for YouTube or open in a new tab: "
+                  + `<a href="https://www.youtube.com/watch?v=${mod.videoId}" target="_blank" rel="noopener">Open video</a>`;
+              }
+            }
           }
         }
       });
     }
-    window.onYouTubeIframeAPIReady = function(){ modules.forEach(m => mountModuleVideo(m)); };
+
+    window.onYouTubeIframeAPIReady = function(){
+      ytApiReadyFired = true;
+      modules.forEach(m => mountModuleVideo(m));
+    };
+
+    // If the API didn’t fire (blocked/slow), try re-injecting it once after 4s
+    setTimeout(() => {
+      if (!ytApiReadyFired || !window.YT || !window.YT.Player) {
+        console.warn('YouTube IFrame API not ready — reinjecting script');
+        const s = document.createElement('script');
+        s.src = 'https://www.youtube.com/iframe_api';
+        document.head.appendChild(s);
+      }
+    }, 4000);
 
     // ===== Progress / Exam unlock =====
     function updateProgress(){
