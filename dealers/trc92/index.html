@@ -187,6 +187,7 @@
   <script>
     const PASS = 70;
     const WATCH_THRESHOLD = 0.85; // must watch at least 85% (unique seconds)
+    let examRendered = false; // prevent re-render/shuffle of exam
 
     // ===== Storage helpers =====
     const storage = {
@@ -551,7 +552,7 @@
       }
     }, 4000);
 
-    // ===== Progress / Exam unlock =====
+    // ===== Progress / Exam unlock (render exam once) =====
     function updateProgress(){
       const s = storage.getModuleScores();
       const passed = Object.keys(s).filter(k => s[k] >= PASS).length;
@@ -562,7 +563,7 @@
       const unlocked = passed===total;
       document.getElementById('examLocked').classList.toggle('hidden', unlocked);
       document.getElementById('examForm').classList.toggle('hidden', !unlocked);
-      if(unlocked) renderExam();
+      if (unlocked && !examRendered) { renderExam(); examRendered = true; }
     }
     updateProgress();
 
@@ -748,7 +749,7 @@
       const doc = new jsPDF({orientation:'landscape', unit:'pt', format:'letter'});
       const W = doc.internal.pageSize.getWidth(); const H = doc.internal.pageSize.getHeight();
 
-      // If you add a background image at /dealers/trc92/assets/certificate_bg.png, uncomment:
+      // Optional: add a background image at /dealers/trc92/assets/certificate_bg.png
       // const bg = new Image(); bg.src = 'assets/certificate_bg.png';
       // await new Promise((res, rej)=>{ bg.onload=res; bg.onerror=rej; });
       // doc.addImage(bg, 'PNG', 0, 0, W, H);
@@ -825,8 +826,11 @@
     }
     refreshCounts();
 
-    // Re-check periodically (simple)
-    setInterval(updateProgress, 1500);
+    // Re-check periodically until exam renders, then stop (prevents moving questions)
+    const progressTimer = setInterval(() => {
+      updateProgress();
+      if (examRendered) clearInterval(progressTimer);
+    }, 1500);
   </script>
 </body>
 </html>
