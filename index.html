@@ -6,7 +6,7 @@
   <title>Turtle Island Financing — Truth in Financing, Indigenous Owned & Certified</title>
   <meta name="description" content="100% Indigenous-owned, CCAB-certified financing support. Trauma-informed, OCAP-trained staff. Transparent auto financing that protects your tax exemption.">
   <meta property="og:title" content="Turtle Island Financing — Transparent Indigenous Auto Financing">
-  <meta property="og:description" content="Indigenous-owned and certified. No gimmicks. Your exemption savings stay yours. We support informed decisions with Free, Prior, and Informed Consent (FPIC).">
+  <meta property="og:description" content="Indigenous-owned and certified. Your exemption savings stay yours. We support informed decisions with Free, Prior, and Informed Consent (FPIC).">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/hero-joyful-truck.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,22 +34,16 @@
     </div>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
     <div class="container hero-grid">
       <div class="hero-copy">
-        <h2>Truth in Financing — Built on Respect, Transparency, and Choice</h2>
-        <p>We protect your Indigenous tax exemption. We don’t bury your savings in add-ons or gimmicks. At Turtle Island, you see every line of your deal and choose freely with informed consent.</p>
+        <h2>Keep Your Tax Savings. Choose With Confidence.</h2>
+        <p>We protect your Indigenous tax exemption and show every line of your deal transparently. No gimmicks, no pressure, just honest financing with Free, Prior, and Informed Consent (FPIC).</p>
         <div class="hero-ctas">
-          <a class="btn" href="#apply">Start Pre-Approval</a>
-          <a class="btn link" href="#truth">Truth in Financing</a>
-          <a class="btn link" href="/supports.html">Supports & Roadmap</a>
+          <a class="btn" href="#apply">Get Pre-Approved</a>
+          <a class="btn link" href="#truth">See How It Works</a>
         </div>
-        <ul class="pill-list">
-          <li>100% Indigenous-owned & CCAB certified</li>
-          <li>Trauma-informed & OCAP® trained staff</li>
-          <li>20+ years working within Indigenous communities</li>
-          <li>Respectful handling of tax exemption</li>
-        </ul>
       </div>
       <div class="hero-art">
         <img src="assets/hero-joyful-truck.png"
@@ -59,10 +53,10 @@
     </div>
   </section>
 
+  <!-- Truth in Financing -->
   <section id="truth" class="truth-in-financing">
     <div class="container">
       <h3>Truth in Financing: Shady vs. Transparent</h3>
-      <p>Here’s how some dealers inflate your loan vs. how Turtle Island protects your savings.</p>
       <table class="comparison">
         <thead>
           <tr><th>Line Item</th><th>Shady Dealer</th><th>Turtle Island</th></tr>
@@ -78,66 +72,101 @@
           <tr><td>Total Interest Paid</td><td>$9,320</td><td>$7,150</td></tr>
         </tbody>
       </table>
-      <p class="muted small">With Turtle Island, you keep over $10,000 in savings that shady dealers try to take.</p>
+      <div class="cta-center">
+        <a class="btn wide" href="#apply">Protect My Savings → Apply Now</a>
+      </div>
     </div>
   </section>
 
+  <!-- Trust Section -->
   <section class="why-choose">
     <div class="container">
       <h3>Why Trust Turtle Island?</h3>
       <ul class="checklist">
-        <li>✅ 100% Indigenous-owned and proudly <strong>Certified by the Canadian Council for Indigenous Business (CCIB/CCAB)</strong></li>
-        <li>✅ <strong>Trauma-informed & OCAP® trained staff</strong> protect your privacy and dignity</li>
-        <li>✅ Over 20 years working in Indigenous communities in social work & engagement</li>
-        <li>✅ Respectful of cultural protocols and traditional approaches</li>
-        <li>✅ We sell GAP, insurance, and warranties — but only with <strong>Free, Prior, and Informed Consent (FPIC)</strong></li>
+        <li>✅ 100% Indigenous-owned and proudly <strong>CCAB Certified</strong></li>
+        <li>✅ Trauma-informed & <strong>OCAP® trained staff</strong> safeguard your data</li>
+        <li>✅ Over 20 years serving Indigenous communities with respect & dignity</li>
+        <li>✅ We only work with <strong>approved partner dealers</strong> trained by us in Indigenous history, Truth & Reconciliation, and our Transparent + FPIC model</li>
       </ul>
     </div>
   </section>
 
+  <!-- Application Form -->
   <section id="apply" class="form-wrap">
     <div class="container grid">
       <div class="form-card">
         <h3>Quick Pre-Approval</h3>
-        <p class="muted">We’ll share your application with a trained partner dealership in Canada. They may contact you by phone, SMS, or email.</p>
+        <p class="muted"><strong>OCAP® Protected:</strong> Your personal information is handled under the principles of Ownership, Control, Access, and Possession — meaning your data remains yours and is only shared with approved partner dealers for financing.</p>
+
         <form name="preapproval" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" id="leadForm">
           <input type="hidden" name="form-name" value="preapproval">
           <p style="position:absolute;left:-9999px;"><label>Don’t fill this out: <input name="bot-field"></label></p>
-          <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium">
-          <input type="hidden" name="utm_campaign"><input type="hidden" name="utm_term">
-          <input type="hidden" name="utm_content">
 
+          <!-- Personal Info -->
           <div class="row">
             <label>Full Name*<input type="text" name="name" required></label>
-            <label>Phone*<input type="tel" name="phone" required placeholder="e.g., 604-555-0123"></label>
+            <label>Date of Birth*<input type="date" name="dob" required></label>
           </div>
           <div class="row">
             <label>Email*<input type="email" name="email" required></label>
+            <label>Phone*<input type="tel" name="phone" required placeholder="e.g., 604-555-0123"></label>
+          </div>
+
+          <!-- Address -->
+          <div class="row">
+            <label>Street Address*<input type="text" name="address" required></label>
+            <label>City*<input type="text" name="city" required></label>
+          </div>
+          <div class="row">
             <label>Province/Territory*<select name="province" required>
               <option value="">Select…</option>
               <option>BC</option><option>AB</option><option>SK</option><option>MB</option>
               <option>ON</option><option>QC</option><option>NB</option><option>NS</option>
               <option>PE</option><option>NL</option><option>YT</option><option>NT</option><option>NU</option>
             </select></label>
+            <label>Postal Code*<input type="text" name="postal" required></label>
+          </div>
+
+          <!-- Employment & Income -->
+          <div class="row">
+            <label>Employer*<input type="text" name="employer" required></label>
+            <label>Monthly Income*<input type="number" name="income" required placeholder="CAD$"></label>
           </div>
           <div class="row">
+            <label>Employment Type<select name="employment">
+              <option>Full-Time</option><option>Part-Time</option><option>Seasonal</option>
+              <option>Self-Employed</option><option>Other</option>
+            </select></label>
+            <label>Housing<select name="housing">
+              <option>Own</option><option>Rent</option><option>On-Reserve</option><option>With Family</option>
+            </select></label>
+          </div>
+
+          <!-- Vehicle & Credit -->
+          <div class="row">
+            <label>Seeking<select name="seeking">
+              <option value="">Select…</option><option>Car</option><option>Truck</option><option>SUV</option><option>Van</option>
+            </select></label>
             <label>Estimated Credit<select name="credit">
               <option value="">Prefer not to say</option><option>Excellent (720+)</option>
               <option>Good (660–719)</option><option>Fair (600–659)</option>
               <option>Building (&lt;600)</option><option>New to credit</option>
             </select></label>
-            <label>Seeking<select name="seeking">
-              <option value="">Select…</option><option>Car</option><option>Truck</option><option>SUV</option><option>Van</option>
-            </select></label>
           </div>
-          <label>Notes (optional)<textarea name="notes" rows="3" placeholder="Seasonal fishing, self-employed, on-reserve delivery, timeline, budget…"></textarea></label>
+
+          <!-- Notes -->
+          <label>Notes (optional)<textarea name="notes" rows="3" placeholder="E.g., seasonal fishing, on-reserve delivery, budget, timeline…"></textarea></label>
+
+          <!-- Consent -->
           <label class="consent">
             <input type="checkbox" name="consent" required>
-            I consent to my application being shared with partner dealerships for the purpose of securing financing. I understand the dealership will perform a credit check as part of the process. I agree to receive communications related to my application. There is no cost to me for this service; the partner dealership pays the referral fee.
+            I consent to my application being shared with Turtle Island approved partner dealerships for the purpose of securing financing. I understand the dealership will perform a credit check. I agree to receive communications related to my application.
           </label>
+
           <button type="submit" class="btn wide">Get Pre-Approved</button>
         </form>
       </div>
+
       <aside class="trust">
         <h4>Trust &amp; Certification</h4>
         <div class="ccab-badge">
@@ -156,6 +185,7 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container foot">
       <p>© <span id="year"></span> Turtle Island Financing — a trade name of <strong>Brooke Ashley Group Inc.</strong> • <span class="muted">Certified Aboriginal Business (CAB) — CCAB</span></p>
@@ -164,9 +194,8 @@
         <a href="/supports.html">Supports</a>
         <a href="/verify.html">Verify</a>
         <a href="/dealers.html">For Dealers</a>
-        <a href="/standards.html">Our Standards</a>
         <a href="#" onclick="window.alert('Email: hello@turtleislandfinancing.ca'); return false;">Contact</a>
-        <a href="#" onclick="window.alert('Privacy: We share your info only with partner dealers for financing.'); return false;">Privacy</a>
+        <a href="#" onclick="window.alert('Privacy: We share your info only with approved partner dealers for financing.'); return false;">Privacy</a>
       </nav>
     </div>
   </footer>
