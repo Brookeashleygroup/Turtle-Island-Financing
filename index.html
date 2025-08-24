@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Turtle Island Financing — Transparent Indigenous Auto Financing</title>
-  <meta name="description" content="Indigenous-owned, CCAB-certified. Transparent financing that honors your rights, protects your tax exemption, offers remote approvals and home delivery. Exclusive partnership with TRC-trained Pioneer Auto.">
+  <meta name="description" content="Indigenous-owned, CCAB-certified. Transparent financing that honors your rights, protects your tax exemption, and offers remote approvals and home delivery. Exclusive partnership with TRC-trained Pioneer Auto.">
   <meta property="og:title" content="Turtle Island Financing — Truth in Financing">
   <meta property="og:description" content="Trust and Protection comes from Turtle Island Financing. Exclusive TRC-trained partner (Pioneer Auto), remote approvals, home delivery, and 1,000+ vehicles sold annually.">
   <meta property="og:type" content="website">
@@ -28,7 +28,7 @@
       </a>
       <nav class="top-nav">
         <a class="btn link" href="/supports.html">Supports</a>
-        <a class="btn ghost" href="#apply">Apply Now</a>
+        <a class="btn ghost" href="#apply">Contact Us</a>
       </nav>
     </div>
   </header>
@@ -45,7 +45,7 @@
           Prefer to shop from home? We can complete your deal <strong>remotely</strong> and <strong>deliver your vehicle</strong> to you for a comfortable, stress-free experience.
         </p>
         <div class="hero-ctas">
-          <a class="btn" href="#apply">Protect My Savings → Check If I Qualify</a>
+          <a class="btn" href="#apply">Start Here → Quick Contact</a>
         </div>
         <ul class="pill-list">
           <li>CCAB Certified</li>
@@ -84,7 +84,7 @@
       </ul>
 
       <div class="cta-center" style="margin-top:1rem">
-        <a class="btn" href="#apply">See Options → Check If I Qualify</a>
+        <a class="btn" href="#apply">See Options → Quick Contact</a>
       </div>
     </div>
   </section>
@@ -110,7 +110,7 @@
         </tbody>
       </table>
       <div class="cta-center">
-        <a class="btn wide" href="#apply">Protect My Savings → Check If I Qualify</a>
+        <a class="btn wide" href="#apply">Protect My Savings → Quick Contact</a>
       </div>
     </div>
   </section>
@@ -130,92 +130,50 @@
     </div>
   </section>
 
-  <!-- Apply Form -->
+  <!-- Contact Form -->
   <section id="apply" class="form-wrap">
     <div class="container grid">
       <div class="form-card">
-        <h3>Quick Pre-Approval</h3>
+        <h3>Quick Contact — No Credit Pull</h3>
         <p class="muted">
-          <strong>OCAP® Protected:</strong> Your application is safeguarded under Ownership, Control, Access, and Possession.
-          <strong>Trust and Protection comes from Turtle Island Financing.</strong> Our team can complete your deal remotely and arrange home delivery.
+          This is <strong>not</strong> a credit application. Justine Smoke, Managing Director of Turtle Island Financing, will follow up personally by phone or email to discuss your options.
         </p>
 
-        <form name="preapproval" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" id="leadForm">
-          <input type="hidden" name="form-name" value="preapproval">
+        <form name="quickcontact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" id="leadForm">
+          <input type="hidden" name="form-name" value="quickcontact">
           <p style="position:absolute;left:-9999px;"><label>Don’t fill this out: <input name="bot-field"></label></p>
           <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium">
           <input type="hidden" name="utm_campaign"><input type="hidden" name="utm_term">
           <input type="hidden" name="utm_content">
-          <input type="hidden" name="vehicle_interest">
 
-          <!-- Step 1 -->
-          <fieldset id="step1">
-            <legend class="muted">Step 1 of 2 — Start here (no credit pull)</legend>
-            <div class="row">
-              <label>Full Name*<input type="text" name="name" required></label>
-              <label>Province/Territory*<select name="province_step1" required>
-                <option value="">Select…</option>
-                <option>BC</option><option>AB</option><option>SK</option><option>MB</option>
-                <option>ON</option><option>QC</option><option>NB</option><option>NS</option>
-                <option>PE</option><option>NL</option><option>YT</option><option>NT</option><option>NU</option>
-              </select></label>
-            </div>
-            <div class="row">
-              <label>Email*<input type="email" name="email" required></label>
-              <label>Phone*<input type="tel" name="phone" required placeholder="e.g., 778-716-8488"></label>
-            </div>
-            <div class="row">
-              <label>Seeking<select name="seeking">
-                <option value="">Select…</option><option>Car</option><option>Truck</option><option>SUV</option><option>Van</option>
-              </select></label>
-              <label>Estimated Credit<select name="credit">
-                <option value="">Prefer not to say</option><option>Excellent (720+)</option>
-                <option>Good (660–719)</option><option>Fair (600–659)</option>
-                <option>Building (&lt;600)</option><option>New to credit</option>
-              </select></label>
-            </div>
-            <button type="button" id="toStep2" class="btn wide">Continue →</button>
-          </fieldset>
+          <div class="row">
+            <label>Full Name*<input type="text" name="name" required></label>
+            <label>City*<input type="text" name="city" required></label>
+          </div>
+          <div class="row">
+            <label>Email*<input type="email" name="email" required></label>
+            <label>Phone*<input type="tel" name="phone" required placeholder="e.g., 778-716-8488"></label>
+          </div>
+          <div class="row">
+            <label>Province/Territory*<select name="province" required>
+              <option value="">Select…</option>
+              <option>BC</option><option>AB</option><option>SK</option><option>MB</option>
+              <option>ON</option><option>QC</option><option>NB</option><option>NS</option>
+              <option>PE</option><option>NL</option><option>YT</option><option>NT</option><option>NU</option>
+            </select></label>
+          </div>
+          <div class="row">
+            <label>Vehicle Type (optional)<select name="seeking">
+              <option value="">Select…</option><option>Car</option><option>Truck</option><option>SUV</option><option>Van</option>
+            </select></label>
+            <label>Credit Estimate (optional)<select name="credit">
+              <option value="">Prefer not to say</option><option>Excellent (720+)</option>
+              <option>Good (660–719)</option><option>Fair (600–659)</option>
+              <option>Building (&lt;600)</option><option>New to credit</option>
+            </select></label>
+          </div>
 
-          <!-- Step 2 -->
-          <fieldset id="step2" style="display:none">
-            <legend class="muted">Step 2 — A few more details</legend>
-            <div class="row">
-              <label>Date of Birth*<input type="date" name="dob"></label>
-              <label>Street Address*<input type="text" name="address"></label>
-            </div>
-            <div class="row">
-              <label>City*<input type="text" name="city"></label>
-              <label>Postal Code*<input type="text" name="postal"></label>
-            </div>
-            <div class="row">
-              <label>Employer*<input type="text" name="employer"></label>
-              <label>Monthly Income*<input type="number" name="income" placeholder="CAD$"></label>
-            </div>
-            <div class="row">
-              <label>Employment Type<select name="employment">
-                <option>Full-Time</option><option>Part-Time</option><option>Seasonal</option>
-                <option>Self-Employed</option><option>Other</option>
-              </select></label>
-              <label>Housing<select name="housing">
-                <option>Own</option><option>Rent</option><option>On-Reserve</option><option>With Family</option>
-              </select></label>
-            </div>
-
-            <input type="hidden" name="province">
-
-            <label>Notes (optional)<textarea name="notes" rows="3" placeholder="E.g., remote purchase and delivery to [community], budget, timeline…"></textarea></label>
-
-            <label class="consent">
-              <input type="checkbox" name="consent">
-              I agree to receive communications related to my application and understand a licensed lender may perform a credit check.
-            </label>
-
-            <div class="row" style="gap:.75rem">
-              <button type="button" id="backToStep1" class="btn ghost">← Back</button>
-              <button type="submit" class="btn wide">Get Pre-Approved</button>
-            </div>
-          </fieldset>
+          <button type="submit" class="btn wide">Contact Me →</button>
         </form>
       </div>
 
@@ -236,9 +194,6 @@
           <img src="assets/CIB-LogoH-Colour (1).png" alt="Certified Aboriginal Business (CAB) — CCAB" height="52">
           <div class="ccab-text"><strong>Certified Aboriginal Business (CAB)</strong><br>Verified by the Canadian Council for Aboriginal Business (CCAB)</div>
         </div>
-        <div class="disclaimer" style="margin-top:8px">
-          <p class="muted small"><strong>Disclaimer:</strong> Approvals, rates, and terms are provided by licensed lenders. Pioneer Auto (Maple Ridge) operates under Turtle Island’s TRC Standards and has completed our BAG Indigenous Knowledge &amp; History training.</p>
-        </div>
       </aside>
     </div>
   </section>
@@ -254,50 +209,18 @@
         <a href="tel:+17787168488">778-716-8488</a>
       </p>
       <nav>
-        <a href="#apply">Apply</a>
+        <a href="#apply">Contact</a>
         <a href="/supports.html">Supports</a>
         <a href="#" onclick="window.alert('Email: turtleislandfinancing@gmail.com'); return false;">Contact</a>
-        <a href="#" onclick="window.alert('Privacy: Your information is safeguarded and used only for arranging financing.'); return false;">Privacy</a>
+        <a href="#" onclick="window.alert('Privacy: This is not a credit application. Your info is only used so Justine can follow up.'); return false;">Privacy</a>
       </nav>
     </div>
   </footer>
 
-  <!-- Two-step form script -->
   <script>
     (function(){
-      const step1 = document.getElementById('step1');
-      const step2 = document.getElementById('step2');
-      const toStep2 = document.getElementById('toStep2');
-      const back = document.getElementById('backToStep1');
-      const req = (el, on) => { if(!el) return; on ? el.setAttribute('required','') : el.removeAttribute('required'); };
-
-      function goStep2(){
-        const p1 = document.querySelector('[name="province_step1"]');
-        const p2 = document.querySelector('[name="province"]');
-        if(p1 && p2) p2.value = p1.value;
-
-        ['dob','address','city','postal','employer','income','consent'].forEach(n=>{
-          const f = document.querySelector('[name="'+n+'"]');
-          req(f, true);
-        });
-
-        step1.style.display = 'none';
-        step2.style.display = '';
-        document.getElementById('apply').scrollIntoView({behavior:'smooth', block:'start'});
-      }
-      function goStep1(){
-        ['dob','address','city','postal','employer','income','consent'].forEach(n=>{
-          const f = document.querySelector('[name="'+n+'"]');
-          req(f, false);
-        });
-        step2.style.display = 'none';
-        step1.style.display = '';
-      }
-
-      if (toStep2) toStep2.addEventListener('click', goStep2);
-      if (back) back.addEventListener('click', goStep1);
-
-      const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+      const y = document.getElementById('year'); 
+      if (y) y.textContent = new Date().getFullYear();
     })();
   </script>
 
