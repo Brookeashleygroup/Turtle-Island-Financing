@@ -113,6 +113,100 @@
     </div>
   </section>
 
+  <!-- Featured Vehicles -->
+  <section class="inventory">
+    <div class="container">
+      <h3>Featured Vehicles</h3>
+      <p class="muted">A small sample from our exclusive dealership partner’s lot. Availability changes daily — we’ll match you to the right vehicle and protect your tax exemption.</p>
+
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+        <!-- Card 1 -->
+        <article class="card vehicle">
+          <picture>
+            <img src="assets/vehicles/rav4.jpg" alt="2019 Toyota RAV4 LE AWD — white" loading="lazy" decoding="async">
+          </picture>
+          <h4>2019 Toyota RAV4 LE AWD</h4>
+          <p class="muted small">Comfortable, efficient SUV • Great for winter roads</p>
+          <ul class="pill-list">
+            <li>Example ~$26.9k</li><li>Tax-exempt eligible</li><li>Remote delivery</li>
+          </ul>
+          <button class="btn small check-availability" data-vehicle="2019 Toyota RAV4 LE AWD">Check availability</button>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card vehicle">
+          <picture>
+            <img src="assets/vehicles/f150.jpg" alt="2018 Ford F-150 XLT 4x4 — blue" loading="lazy" decoding="async">
+          </picture>
+          <h4>2018 Ford F-150 XLT 4x4</h4>
+          <p class="muted small">Work-ready pickup • Towing & hauling</p>
+          <ul class="pill-list">
+            <li>Example ~$29.8k</li><li>Tax-exempt eligible</li><li>Remote delivery</li>
+          </ul>
+          <button class="btn small check-availability" data-vehicle="2018 Ford F-150 XLT 4x4">Check availability</button>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card vehicle">
+          <picture>
+            <img src="assets/vehicles/crv.jpg" alt="2020 Honda CR-V EX — silver" loading="lazy" decoding="async">
+          </picture>
+          <h4>2020 Honda CR-V EX</h4>
+          <p class="muted small">Reliable family SUV • Excellent safety</p>
+          <ul class="pill-list">
+            <li>Example ~$28.5k</li><li>Tax-exempt eligible</li><li>Remote delivery</li>
+          </ul>
+          <button class="btn small check-availability" data-vehicle="2020 Honda CR-V EX">Check availability</button>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card vehicle">
+          <picture>
+            <img src="assets/vehicles/silverado.jpg" alt="2017 Chevrolet Silverado 1500 LT — red" loading="lazy" decoding="async">
+          </picture>
+          <h4>2017 Chevrolet Silverado 1500 LT</h4>
+          <p class="muted small">Trusted V8 power • Crew cab comfort</p>
+          <ul class="pill-list">
+            <li>Example ~$27.4k</li><li>Tax-exempt eligible</li><li>Remote delivery</li>
+          </ul>
+          <button class="btn small check-availability" data-vehicle="2017 Chevrolet Silverado 1500 LT">Check availability</button>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="card vehicle">
+          <picture>
+            <img src="assets/vehicles/tucson.jpg" alt="2021 Hyundai Tucson Preferred — grey" loading="lazy" decoding="async">
+          </picture>
+          <h4>2021 Hyundai Tucson Preferred</h4>
+          <p class="muted small">Modern tech • Great value</p>
+          <ul class="pill-list">
+            <li>Example ~$25.9k</li><li>Tax-exempt eligible</li><li>Remote delivery</li>
+          </ul>
+          <button class="btn small check-availability" data-vehicle="2021 Hyundai Tucson Preferred">Check availability</button>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="card vehicle">
+          <picture>
+            <img src="assets/vehicles/grand-caravan.jpg" alt="2019 Dodge Grand Caravan SXT — black" loading="lazy" decoding="async">
+          </picture>
+          <h4>2019 Dodge Grand Caravan SXT</h4>
+          <p class="muted small">7-passenger space • Budget-friendly</p>
+          <ul class="pill-list">
+            <li>Example ~$18.9k</li><li>Tax-exempt eligible</li><li>Remote delivery</li>
+          </ul>
+          <button class="btn small check-availability" data-vehicle="2019 Dodge Grand Caravan SXT">Check availability</button>
+        </article>
+      </div>
+
+      <p class="muted small" style="margin-top:.75rem">*Vehicle photos & pricing for illustration. Availability & terms change daily and are confirmed during pre-approval (OAC).</p>
+
+      <div class="cta-center" style="margin-top:1rem">
+        <a class="btn" href="#apply">See More Options → Check If I Qualify</a>
+      </div>
+    </div>
+  </section>
+
   <!-- Apply (Two-Step Form) -->
   <section id="apply" class="form-wrap">
     <div class="container grid">
@@ -129,6 +223,7 @@
           <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium">
           <input type="hidden" name="utm_campaign"><input type="hidden" name="utm_term">
           <input type="hidden" name="utm_content">
+          <input type="hidden" name="vehicle_interest">
 
           <!-- STEP 1: Low-friction -->
           <fieldset id="step1">
@@ -192,7 +287,7 @@
             <input type="hidden" name="province">
 
             <!-- Notes -->
-            <label>Notes (optional)<textarea name="notes" rows="3" placeholder="E.g., remote purchase and delivery to [community], budget, timeline…"></textarea></label>
+            <label>Notes (optional)<textarea name="notes" rows="3" placeholder="E.g., interested in: [auto], remote purchase and delivery to [community], budget, timeline…"></textarea></label>
 
             <!-- Consent -->
             <label class="consent">
@@ -255,7 +350,7 @@
     </div>
   </footer>
 
-  <!-- Minimal inline JS to power the two-step form -->
+  <!-- Minimal inline JS to power the two-step form + vehicle prefill -->
   <script>
     (function(){
       const step1 = document.getElementById('step1');
@@ -266,12 +361,10 @@
       const req = (el, on) => { if(!el) return; on ? el.setAttribute('required','') : el.removeAttribute('required'); };
 
       function goStep2(){
-        // copy province from step1 into canonical hidden field
         const p1 = document.querySelector('[name="province_step1"]');
         const p2 = document.querySelector('[name="province"]');
         if(p1 && p2) p2.value = p1.value;
 
-        // Make step2 fields required only when visible
         ['dob','address','city','postal','employer','income','consent'].forEach(n=>{
           const f = document.querySelector('[name="'+n+'"]');
           req(f, true);
@@ -292,6 +385,20 @@
 
       if (toStep2) toStep2.addEventListener('click', goStep2);
       if (back) back.addEventListener('click', goStep1);
+
+      // Prefill form when user clicks "Check availability"
+      const interest = document.querySelector('[name="vehicle_interest"]');
+      const notes = document.querySelector('textarea[name="notes"]');
+      document.querySelectorAll('.check-availability').forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          const v = btn.getAttribute('data-vehicle') || 'vehicle';
+          if (interest) interest.value = v;
+          if (notes && !notes.value.includes('Interested in:')) {
+            notes.value = `Interested in: ${v}\n` + (notes.value || '');
+          }
+          document.getElementById('apply').scrollIntoView({behavior:'smooth', block:'start'});
+        });
+      });
 
       const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
     })();
