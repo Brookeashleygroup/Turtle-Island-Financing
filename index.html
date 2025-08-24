@@ -64,19 +64,25 @@
     </div>
   </section>
 
-  <!-- Vehicle Lineup Banner -->
+  <!-- Vehicle Lineup -->
   <section class="inventory">
-    <div class="container">
+    <div class="container" style="text-align:center">
       <h3>Vehicle Examples</h3>
       <p class="muted">SUVs, trucks, vans, and cars — we’ll match you to the right vehicle and protect your tax exemption. Inventory changes daily.</p>
-      <figure class="vehicle-banner">
-        <img src="assets/CCL_BG.webp" alt="Lineup of vehicles including Toyota, Honda, GMC, Dodge, and more" width="1600" height="410" loading="lazy" decoding="async">
+
+      <figure class="vehicle-banner" style="display:inline-block; margin:1rem auto;">
+        <img src="assets/CCL_BG.webp"
+             alt="Lineup of vehicles including Toyota, Honda, GMC, Dodge, and more"
+             width="1600" height="410"
+             loading="lazy" decoding="async">
       </figure>
-      <ul class="pill-list" style="margin-top:12px">
+
+      <ul class="pill-list" style="margin-top:12px; justify-content:center;">
         <li>Large selection (cars • SUVs • trucks • vans)</li>
         <li>Tax-exempt eligible deals</li>
         <li>Remote approvals &amp; delivery anywhere</li>
       </ul>
+
       <div class="cta-center" style="margin-top:1rem">
         <a class="btn" href="#apply">See Options → Check If I Qualify</a>
       </div>
@@ -117,19 +123,14 @@
         <li>✅ Indigenous-owned and proudly <strong>CCAB Certified</strong></li>
         <li>✅ Trauma-informed &amp; <strong>OCAP®-trained</strong> staff safeguard your data</li>
         <li>✅ Exclusive partnership with <strong>Pioneer Auto (Maple Ridge)</strong> — TRC-trained and certified under Turtle Island’s BAG Indigenous Knowledge &amp; History program</li>
-        <li>✅ One of the Lower Mainland’s largest used vehicle inventories (cars, trucks, SUVs, vans)</li>
-        <li>✅ Full service &amp; parts centre (OK Tire)</li>
+        <li>✅ One of the Lower Mainland’s largest used vehicle inventories</li>
         <li>✅ <strong>1,000+ vehicles sold annually</strong> — proven dealership experience</li>
         <li>✅ Remote approvals and home delivery options</li>
       </ul>
-      <blockquote class="testimonial" style="margin-top:1rem">
-        “I felt safe applying here because I knew my tax exemption wouldn’t be hidden in the numbers. Turtle Island handled everything with respect and connected me with the right vehicle.”
-        <br><span class="muted small">— Community Member</span>
-      </blockquote>
     </div>
   </section>
 
-  <!-- Apply (Two-Step Form) -->
+  <!-- Apply Form -->
   <section id="apply" class="form-wrap">
     <div class="container grid">
       <div class="form-card">
@@ -147,7 +148,7 @@
           <input type="hidden" name="utm_content">
           <input type="hidden" name="vehicle_interest">
 
-          <!-- STEP 1 -->
+          <!-- Step 1 -->
           <fieldset id="step1">
             <legend class="muted">Step 1 of 2 — Start here (no credit pull)</legend>
             <div class="row">
@@ -176,7 +177,7 @@
             <button type="button" id="toStep2" class="btn wide">Continue →</button>
           </fieldset>
 
-          <!-- STEP 2 -->
+          <!-- Step 2 -->
           <fieldset id="step2" style="display:none">
             <legend class="muted">Step 2 — A few more details</legend>
             <div class="row">
@@ -218,7 +219,7 @@
         </form>
       </div>
 
-      <!-- Right Column: Trust & Contact -->
+      <!-- Trust Box -->
       <aside class="trust">
         <h4>Your Direct Contact</h4>
         <div class="card" style="display:flex;gap:12px;align-items:center">
@@ -229,16 +230,7 @@
           </div>
         </div>
 
-        <h4 style="margin-top:16px">Turtle Island Financing + Pioneer Auto</h4>
-        <p>Together as one team under our TRC Standards, we offer:</p>
-        <ul class="bullets">
-          <li>Large, diverse stock of cars, trucks, SUVs, and vans</li>
-          <li>Transparent financing that protects your tax exemption</li>
-          <li>Full service &amp; parts department, including OK Tire</li>
-          <li><strong>1,000+ vehicles sold annually</strong> — experience you can trust</li>
-          <li>Remote approvals &amp; delivery anywhere — buy from the comfort of your home</li>
-        </ul>
-        <div class="ccab-badge" style="margin-top:12px">
+        <div class="ccab-badge" style="margin-top:16px">
           <img src="assets/CIB-LogoH-Colour (1).png" alt="Certified Aboriginal Business (CAB) — CCAB" height="52">
           <div class="ccab-text"><strong>Certified Aboriginal Business (CAB)</strong><br>Verified by the Canadian Council for Aboriginal Business (CCAB)</div>
         </div>
@@ -264,7 +256,7 @@
     </div>
   </footer>
 
-  <!-- Minimal JS for form -->
+  <!-- Two-step form script -->
   <script>
     (function(){
       const step1 = document.getElementById('step1');
@@ -277,12 +269,32 @@
         const p1 = document.querySelector('[name="province_step1"]');
         const p2 = document.querySelector('[name="province"]');
         if(p1 && p2) p2.value = p1.value;
+
         ['dob','address','city','postal','employer','income','consent'].forEach(n=>{
           const f = document.querySelector('[name="'+n+'"]');
           req(f, true);
         });
-        step1.style.display = 'none'; step2.style.display = '';
+
+        step1.style.display = 'none';
+        step2.style.display = '';
         document.getElementById('apply').scrollIntoView({behavior:'smooth', block:'start'});
       }
       function goStep1(){
-        ['dob','address','city','postal','employer','income','consent'].
+        ['dob','address','city','postal','employer','income','consent'].forEach(n=>{
+          const f = document.querySelector('[name="'+n+'"]');
+          req(f, false);
+        });
+        step2.style.display = 'none';
+        step1.style.display = '';
+      }
+
+      if (toStep2) toStep2.addEventListener('click', goStep2);
+      if (back) back.addEventListener('click', goStep1);
+
+      const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
