@@ -113,104 +113,28 @@
     </div>
   </section>
 
-  <!-- Featured Vehicles (live units & 'Your Price') -->
+  <!-- Generic Vehicle Examples banner (simple + neutral) -->
   <section class="inventory">
     <div class="container">
-      <h3>Featured Vehicles</h3>
-      <p class="muted">Hand-picked examples from our partner lot. We’ll confirm today’s availability and protect your tax exemption.</p>
+      <h3>Vehicle Examples</h3>
+      <p class="muted">SUVs, trucks, vans, and cars — we’ll match you to the right vehicle and protect your tax exemption. Inventory changes daily.</p>
 
-      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
-        <!-- C-HR -->
-        <article class="card vehicle">
-          <picture>
-            <img src="assets/vehicles/2020-toyota-chr-le.jpg" alt="2020 Toyota C-HR LE FWD — grey" loading="lazy" decoding="async">
-          </picture>
-          <h4>2020 Toyota C-HR LE FWD</h4>
-          <p class="muted small">9,753 km • Grey • I4 • Auto</p>
-          <ul class="pill-list">
-            <li><strong>Your Price: $27,488</strong></li>
-            <li>Tax-exempt eligible</li><li>Remote delivery</li>
-          </ul>
-          <button class="btn small check-availability" data-vehicle="2020 Toyota C-HR LE FWD ($27,488)">Check availability</button>
-        </article>
+      <figure class="card" style="overflow:hidden">
+        <!-- Upload a neutral composite image here -->
+        <img src="assets/vehicles/generic-vehicles-banner.jpg"
+             alt="Example vehicles — car, SUV, and truck"
+             loading="lazy" decoding="async"
+             style="width:100%;height:auto;display:block;object-fit:cover;">
+      </figure>
 
-        <!-- Grand Caravan -->
-        <article class="card vehicle">
-          <picture>
-            <img src="assets/vehicles/2021-chrysler-grand-caravan-sxt.jpg" alt="2021 Chrysler Grand Caravan SXT — white" loading="lazy" decoding="async">
-          </picture>
-          <h4>2021 Chrysler Grand Caravan SXT</h4>
-          <p class="muted small">2WD • Family space • Budget-friendly</p>
-          <ul class="pill-list">
-            <li><strong>Your Price: $33,888</strong></li>
-            <li>Tax-exempt eligible</li><li>Remote delivery</li>
-          </ul>
-          <button class="btn small check-availability" data-vehicle="2021 Chrysler Grand Caravan SXT ($33,888)">Check availability</button>
-        </article>
-
-        <!-- CR-V -->
-        <article class="card vehicle">
-          <picture>
-            <img src="assets/vehicles/2022-honda-crv-lx-awd.jpg" alt="2022 Honda CR-V LX AWD — silver" loading="lazy" decoding="async">
-          </picture>
-          <h4>2022 Honda CR-V LX AWD</h4>
-          <p class="muted small">31,336 km • Silver • AWD</p>
-          <ul class="pill-list">
-            <li><strong>Your Price: $36,888</strong></li>
-            <li>Tax-exempt eligible</li><li>Remote delivery</li>
-          </ul>
-          <button class="btn small check-availability" data-vehicle="2022 Honda CR-V LX AWD ($36,888)">Check availability</button>
-        </article>
-
-        <!-- Eclipse Cross -->
-        <article class="card vehicle">
-          <picture>
-            <img src="assets/vehicles/2023-mitsubishi-eclipse-cross-se.jpg" alt="2023 Mitsubishi Eclipse Cross SE S-AWC — silver" loading="lazy" decoding="async">
-          </picture>
-          <h4>2023 Mitsubishi Eclipse Cross SE S-AWC</h4>
-          <p class="muted small">31,333 km • Silver • S-AWC</p>
-          <ul class="pill-list">
-            <li><strong>Your Price: $36,988</strong></li>
-            <li>Tax-exempt eligible</li><li>Remote delivery</li>
-          </ul>
-          <button class="btn small check-availability" data-vehicle="2023 Mitsubishi Eclipse Cross SE S-AWC ($36,988)">Check availability</button>
-        </article>
-
-        <!-- Explorer -->
-        <article class="card vehicle">
-          <picture>
-            <img src="assets/vehicles/2022-ford-explorer-st-line-4wd.jpg" alt="2022 Ford Explorer ST-Line 4WD — white" loading="lazy" decoding="async">
-          </picture>
-          <h4>2022 Ford Explorer ST-Line 4WD</h4>
-          <p class="muted small">Sport styling • 3-row family SUV</p>
-          <ul class="pill-list">
-            <li><strong>Your Price: $43,888</strong></li>
-            <li>Tax-exempt eligible</li><li>Remote delivery</li>
-          </ul>
-          <button class="btn small check-availability" data-vehicle="2022 Ford Explorer ST-Line 4WD ($43,888)">Check availability</button>
-        </article>
-
-        <!-- F-150 -->
-        <article class="card vehicle">
-          <picture>
-            <img src="assets/vehicles/2019-ford-f150.jpg" alt="2019 Ford F-150 — example unit" loading="lazy" decoding="async">
-          </picture>
-          <h4>2019 Ford F-150</h4>
-          <p class="muted small">Work & play • Aluminum body</p>
-          <ul class="pill-list">
-            <li><strong>Your Price: $27,888</strong></li>
-            <li>Tax-exempt eligible</li><li>Remote delivery</li>
-          </ul>
-          <button class="btn small check-availability" data-vehicle="2019 Ford F-150 ($27,888)">Check availability</button>
-        </article>
-      </div>
-
-      <p class="muted small" style="margin-top:.75rem">
-        *“Your Price” and availability are updated frequently and confirmed during pre-approval (OAC). Additional standard fees may apply (doc & finance). Photos are representative; ask us for the exact unit photos.
-      </p>
+      <ul class="pill-list" style="margin-top:12px">
+        <li>Large selection (cars • SUVs • trucks • vans)</li>
+        <li>Tax-exempt eligible deals</li>
+        <li>Remote approvals &amp; delivery anywhere</li>
+      </ul>
 
       <div class="cta-center" style="margin-top:1rem">
-        <a class="btn" href="#apply">See More Options → Check If I Qualify</a>
+        <a class="btn" href="#apply">See Options → Check If I Qualify</a>
       </div>
     </div>
   </section>
@@ -233,7 +157,7 @@
           <input type="hidden" name="utm_content">
           <input type="hidden" name="vehicle_interest">
 
-          <!-- STEP 1: Low-friction -->
+          <!-- STEP 1 -->
           <fieldset id="step1">
             <legend class="muted">Step 1 of 2 — Start here (no credit pull)</legend>
             <div class="row">
@@ -262,11 +186,9 @@
             <button type="button" id="toStep2" class="btn wide">Continue →</button>
           </fieldset>
 
-          <!-- STEP 2: Detailed info (revealed after Step 1) -->
+          <!-- STEP 2 -->
           <fieldset id="step2" style="display:none">
             <legend class="muted">Step 2 — A few more details</legend>
-
-            <!-- Personal -->
             <div class="row">
               <label>Date of Birth*<input type="date" name="dob"></label>
               <label>Street Address*<input type="text" name="address"></label>
@@ -275,8 +197,6 @@
               <label>City*<input type="text" name="city"></label>
               <label>Postal Code*<input type="text" name="postal"></label>
             </div>
-
-            <!-- Employment & Income -->
             <div class="row">
               <label>Employer*<input type="text" name="employer"></label>
               <label>Monthly Income*<input type="number" name="income" placeholder="CAD$"></label>
@@ -294,10 +214,8 @@
             <!-- Normalized province value for step2 submit -->
             <input type="hidden" name="province">
 
-            <!-- Notes -->
-            <label>Notes (optional) <textarea name="notes" rows="3" placeholder="E.g., interested in: [auto], remote purchase and delivery to [community], budget, timeline…"></textarea></label>
+            <label>Notes (optional)<textarea name="notes" rows="3" placeholder="E.g., remote purchase and delivery to [community], budget, timeline…"></textarea></label>
 
-            <!-- Consent -->
             <label class="consent">
               <input type="checkbox" name="consent">
               I agree to receive communications related to my application and understand a licensed lender may perform a credit check.
@@ -358,14 +276,13 @@
     </div>
   </footer>
 
-  <!-- Minimal inline JS to power the two-step form + vehicle prefill -->
+  <!-- Minimal inline JS to power the two-step form -->
   <script>
     (function(){
       const step1 = document.getElementById('step1');
       const step2 = document.getElementById('step2');
       const toStep2 = document.getElementById('toStep2');
       const back = document.getElementById('backToStep1');
-
       const req = (el, on) => { if(!el) return; on ? el.setAttribute('required','') : el.removeAttribute('required'); };
 
       function goStep2(){
@@ -393,20 +310,6 @@
 
       if (toStep2) toStep2.addEventListener('click', goStep2);
       if (back) back.addEventListener('click', goStep1);
-
-      // Prefill form when user clicks "Check availability"
-      const interest = document.querySelector('[name="vehicle_interest"]');
-      const notes = document.querySelector('textarea[name="notes"]');
-      document.querySelectorAll('.check-availability').forEach(btn=>{
-        btn.addEventListener('click', ()=>{
-          const v = btn.getAttribute('data-vehicle') || 'vehicle';
-          if (interest) interest.value = v;
-          if (notes && !notes.value.includes('Interested in:')) {
-            notes.value = `Interested in: ${v}\n` + (notes.value || '');
-          }
-          document.getElementById('apply').scrollIntoView({behavior:'smooth', block:'start'});
-        });
-      });
 
       const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
     })();
